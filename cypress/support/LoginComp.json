@@ -1,0 +1,15 @@
+{
+    "URL": "https://www.reddit.com/login/",
+    "LOGEDINURL": "",
+    "LOGEDINURLGGL": "https://www.reddit.com/user/Doaa_magdy",
+    "WITHGOOGLE": "#google-sso",
+    "EMAIL": "input",
+    "PASSGGL": ".whsOnd zHQkBf",
+    "NEXTBUTTON1": ".VfPpkd-vQzf8d",
+    "NEXTBUTTON2": ".VfPpkd-vQzf8d",
+
+    "USERNAME": "#loginUsername",
+    "PASSWORD": "#loginPassword",
+    "LOGIN": ":nth-child(8) > .AnimatedForm__submitButton",
+    "SIGNUP": ".register > .BottomLink"
+}
