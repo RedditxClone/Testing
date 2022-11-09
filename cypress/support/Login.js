@@ -5,6 +5,10 @@ class Login{
         cy.visit(LOGINCOMP.URL)
     }
 
+    signup(){
+        cy.get(LOGINCOMP.SIGNUP).click()
+    }
+
     ///////////////////////////////// username & password /////////////////////////
     username(username){
         cy.get(LOGINCOMP.USERNAME)

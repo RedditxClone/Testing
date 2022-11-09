@@ -8,10 +8,19 @@ describe('Test login', function (){
     //     loginpage.naviage();
     // })
 
+    it("Go to SignUp page then come back again", function (){
+        loginpage.naviage();
+        loginpage.signup();
+        cy.wait(5000); // wait for 5 secs
+        //assertion
+        cy.url().should('eq', LOGINCOMP.SIGNUPURL)
+        //go back to login again
+        cy.go('back');
+    })
+
 
     ///////////////////////////////// test cases for username & password method /////////////////////////
     it("Login with valid username and empty password", function (){
-        loginpage.naviage();
         loginpage.username('doaamagdy');   //TODO --> create it later
         loginpage.submit();
         //assertion
@@ -68,7 +77,7 @@ describe('Test login', function (){
         cy.wait(3000);  //wait for 3 secs
         //assertion
         cy.get(LOGINCOMP.PASSGGL).should('exist');
-        cy.back();
+        cy.go('back');
     })
 
     it("Login with invalid gmail & password", function (){
@@ -81,7 +90,7 @@ describe('Test login', function (){
         cy.wait(3000);  //wait for 3 secs
         //assertion
         cy.get(LOGINCOMP.PASSGGL).should('exist');
-        cy.back();
+        cy.go('back');
     })
 
     it("Login with valid gmail & invalid password", function (){
@@ -94,7 +103,7 @@ describe('Test login', function (){
         cy.wait(3000);  //wait for 3 secs
         //assertion
         cy.get(LOGINCOMP.PASSGGL).should('exist');
-        cy.back();
+        cy.go('back');
     })
 
     it("Login with valid gmail & valid password", function (){

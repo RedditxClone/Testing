@@ -11,5 +11,6 @@
     "USERNAME": "#loginUsername",
     "PASSWORD": "#loginPassword",
     "LOGIN": ":nth-child(8) > .AnimatedForm__submitButton",
-    "SIGNUP": ".register > .BottomLink"
+    "SIGNUP": ".register > .BottomLink",
+    "SIGNUPURL": "https://www.reddit.com/account/register/"
 }
