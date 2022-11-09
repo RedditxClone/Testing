@@ -1,0 +1,20 @@
+{
+  "name": "Testing",
+  "version": "1.0.0",
+  "description": "This repository is made for testing subteam which are responsible for developing the scripts used to make E2E tests of the Reddit Clone.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedditxClone/Testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedditxClone/Testing/issues"
+  },
+  "homepage": "https://github.com/RedditxClone/Testing#readme",
+  "dependencies": {
+    "cypress": "^11.0.0"
+  }
+}
