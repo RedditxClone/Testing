@@ -1,0 +1,30 @@
+{
+    "URL": "https://www.reddit.com/account/register/",
+    "SIGNEDUPURL": "",
+    "CONTINUEURL":"",
+    "EMAIL": "#email",
+    "CONTINUE": "",
+    "LOGIN": "",
+    "USERNAME": "#username",
+    "PASSWORD": "#password",
+    "SIGNUP": "#signup",
+    "RECAPTCHA": "#",
+    "RECAPTCHAEXPIRE": "",
+    "BACK": "",
+
+    "WITHGOOGLE": "",
+    "EMAILGGL": "#username",
+    "PASSWORDGGL": "#password",
+    "SIGNUPGGL": "#signup",
+    "NEXTBUTTONGGL1": "",
+    "NEXTBUTTONGGL2": "",
+
+    "WITHFACEBOOK": "",
+    "USERNAMEFACEBOOK": "#username",
+    "PASSWORDFACEBOOK": "#password",
+    "ACCOUNTFACEBOOK": "",
+    "SIGNUPGACEBOOK": "#signup",
+    "NEXTBUTTONFACE1": "",
+    "NEXTBUTTONFACE2": ""
+
+}
