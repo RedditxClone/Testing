@@ -12,5 +12,10 @@
     "PASSWORD": "#loginPassword",
     "LOGIN": ":nth-child(8) > .AnimatedForm__submitButton",
     "SIGNUP": ".register > .BottomLink",
-    "SIGNUPURL": "https://www.reddit.com/account/register/"
+    "SIGNUPURL": "https://www.reddit.com/account/register/",
+
+    "FORGETUSERNAME": "",
+    "FORGETPASSWORD": "",
+    "FORGETUSERNAMEURL": "",
+    "FORGETPASSWORDURL": "" 
 }
