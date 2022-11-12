@@ -1,0 +1,63 @@
+{
+    "URL": "https://swproject.demosfortest.com/settings",
+    "ACCOUNT": "https://swproject.demosfortest.com/settings/account",    
+    "CEMAIL": "",
+    "CURRENTPASS": "",
+    "NEWMAIL": "",
+    "SAVEEMIAL": "",
+    "CURRENTMAIL": "",
+    
+    "CPASS": "",
+    "OLDPASS": "",
+    "NEWPASS": "",
+    "CONFIRMNEWPASS": "",
+    "SAVENEWPASS": "",
+
+    "CGENDER": "",
+    "NEWGENDER": "",
+
+    "CCOUNTRY": "",
+
+    "DELETEACCOUNT": "",
+    "USERNAMEDELETE": "",
+    "PASSWORDDELETE": "",
+    "IUNDERSTAND": "",
+    "DELETE": "",
+    "CANCELDELETE": "",
+
+    "CONNECTTO": "",
+
+
+
+
+    "PROFILE": "https://swproject.demosfortest.com/settings/profile",
+    "DISPLAYNAME": "",
+    "ABOUT": "",
+
+    "ADDSOCIALLINKES": ".MuiBox-root > .MuiButtonBase-root",
+    "CHOOSELINK": ".contain-2",
+    "TYPELINK": ".inp1",
+    "DISPLAYTEXT": ".inp1",
+    "SAVELINK": ".icon-1 > .MuiButtonBase-root",
+
+    "PROFILEPIC": "",
+    "BANNER": "",
+    "NSFW": "",
+    "ALLOWFOLLOWERS": "",
+
+    "SAFETYANDPRIVACY": "https://swproject.demosfortest.com/settings/privacy",
+    "BLOCKNEWUSER": "",
+    "ADD": "",
+    "REMOVE": "",
+
+    "FEED": "https://swproject.demosfortest.com/settings/feed",
+    "ADULTCONTENT": "",
+    "AUTOPLAYMEDIA": "",
+
+    "EMAILS": "https://swproject.demosfortest.com/settings/emails",
+    "NEWFOLLOWER": "",
+    "CHATREQUESTS": "",
+    "UNSUBSCRIBEFROMALLMAILS": ""
+
+}
+
