@@ -20,6 +20,8 @@ class Signup {
     return this
   }
 
+  ////.css-bncy46
+
   continue(){
     cy.get(SIGNUPCOMP.CONTINUE).click()
 
@@ -48,7 +50,8 @@ class Signup {
   }
 
   username (username) {
-    cy.get(SIGNUPCOMP.USERNAME).children().first().click()
+    cy.get(SIGNUPCOMP.USERNAMEANDPASSWORDPARENT).children().first().click()
+   // cy.get(SIGNUPCOMP.USERNAME)
      // .should('exist')
       .clear()
       .type(username)
@@ -56,15 +59,33 @@ class Signup {
   }
 
   password (password) {
-    cy.get(SIGNUPCOMP.USERNAME).children().eq('2').click()
-      .clear()
+    cy.get(SIGNUPCOMP.USERNAMEANDPASSWORDPARENT).children().last().click()
+    //cy.get(SIGNUPCOMP.PASSWORD)  // :nth-child(2) > div > .css-rsk4te
+    //cy.get('.css-nk5jtv')
+     // .clear()
       .type(password)
     return this
   }
 
 
   recaptcha(){
-    cy.get(SIGNUPCOMP.USERNAME).children().last().click()
+    // Cypress.Commands.add('confirmCaptcha', function () {
+    //   cy.get('iframe')
+    //     .first()
+    //     .then((recaptchaIframe) => {
+    //       const body = recaptchaIframe.contents()
+    //       cy.wrap(body).find('.recaptcha-checkbox-border').should('be.visible').click()
+    //     })
+    // })
+    cy.get('iframe')
+    .first()
+    .its('0.contentDocument.body')
+    .should('not.be.undefined')
+    .then(cy.wrap)
+    .find('.rc-anchor-center-container')
+    .should('be.visible')
+    .click();
+    //cy.get(SIGNUPCOMP.USERNAMEANDPASSWORDPARENT).children().eq(1).click()
   }
 
   //TODO
