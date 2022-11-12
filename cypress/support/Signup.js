@@ -12,8 +12,9 @@ class Signup {
   // /////////////////////////////// username & password /////////////////////////
 
   email (email) {
-    cy.get(SIGNUPCOMP.EMAIL)
-      .should('exist')
+    cy.get(SIGNUPCOMP.EMAIL).children().first()
+      .click()
+     // .should('exist')
       .clear()
       .type(email)
     return this
@@ -47,15 +48,15 @@ class Signup {
   }
 
   username (username) {
-    cy.get(SIGNUPCOMP.USERNAME)
-      .should('exist')
+    cy.get(SIGNUPCOMP.USERNAME).children().first().click()
+     // .should('exist')
       .clear()
       .type(username)
     return this
   }
 
   password (password) {
-    cy.get(SIGNUPCOMP.PASSWORD)
+    cy.get(SIGNUPCOMP.USERNAME).children().eq('2').click()
       .clear()
       .type(password)
     return this
@@ -63,7 +64,7 @@ class Signup {
 
 
   recaptcha(){
-    cy.get(SIGNUPCOMP.RECAPTCHA).check()
+    cy.get(SIGNUPCOMP.USERNAME).children().last().click()
   }
 
   //TODO
@@ -79,68 +80,68 @@ class Signup {
 
   // /////////////////////////////// With google /////////////////////////
 
-  withgoogle () {
-    cy.get(SIGNUPCOMP.WITHGOOGLE)
-      .should('exist')
-      .click()
-  }
+  // withgoogle () {
+  //   cy.get(SIGNUPCOMP.WITHGOOGLE)
+  //     .should('exist')
+  //     .click()
+  // }
 
-  gglemail (gmail) {
-    cy.get(SIGNUPCOMP.EMAILGGL)
-      .should('exist')
-      .clear()
-      .type(gmail)
-    return this
-  }
+  // gglemail (gmail) {
+  //   cy.get(SIGNUPCOMP.EMAILGGL)
+  //     .should('exist')
+  //     .clear()
+  //     .type(gmail)
+  //   return this
+  // }
 
-  gglpassword (password) {
-    cy.get(SIGNUPCOMP.PASSGGL)
-      .should('exist')
-      .clear()
-      .type(password)
-    return this
-  }
+  // gglpassword (password) {
+  //   cy.get(SIGNUPCOMP.PASSGGL)
+  //     .should('exist')
+  //     .clear()
+  //     .type(password)
+  //   return this
+  // }
 
-  pressnext1 () {
-    cy.get(SIGNUPCOMP.NEXTBUTTONGGL1)
-  }
+  // pressnext1 () {
+  //   cy.get(SIGNUPCOMP.NEXTBUTTONGGL1)
+  // }
 
-  pressnext2 () {
-    cy.get(SIGNUPCOMP.NEXTBUTTONGGL2)
-  }
+  // pressnext2 () {
+  //   cy.get(SIGNUPCOMP.NEXTBUTTONGGL2)
+  // }
 
 
 
-  // /////////////////////////////// With facebook /////////////////////////
+  // // /////////////////////////////// With facebook /////////////////////////
 
-  withfacebook () {
-    cy.get(SIGNUPCOMP.WITHFACEBOOK)
-      .should('exist')
-      .click()
-  }
+  // withfacebook () {
+  //   cy.get(SIGNUPCOMP.WITHFACEBOOK)
+  //     .should('exist')
+  //     .click()
+  // }
 
-  facebookaccount (facebook) {
-    cy.get(SIGNUPCOMP.ACCOUNTFACEBOOK)
-      .should('exist')
-      .clear()
-      .type(gmail)
-    return this
-  }
+  // facebookaccount (facebook) {
+  //   cy.get(SIGNUPCOMP.ACCOUNTFACEBOOK)
+  //     .should('exist')
+  //     .clear()
+  //     .type(gmail)
+  //   return this
+  // }
 
-  gglpassword (password) {
-    cy.get(SIGNUPCOMP.PASSWORDFACEBOOK)
-      .should('exist')
-      .clear()
-      .type(password)
-    return this
-  }
+  // gglpassword (password) {
+  //   cy.get(SIGNUPCOMP.PASSWORDFACEBOOK)
+  //     .should('exist')
+  //     .clear()
+  //     .type(password)
+  //   return this
+  // }
 
-  pressnext1 () {
-    cy.get(SIGNUPCOMP.NEXTBUTTONFACE1)
-  }
+  // pressnext1 () {
+  //   cy.get(SIGNUPCOMP.NEXTBUTTONFACE1)
+  // }
 
-  pressnext2 () {
-    cy.get(SIGNUPCOMP.NEXTBUTTONFACE2)
-  }
+  // pressnext2 () {
+  //   cy.get(SIGNUPCOMP.NEXTBUTTONFACE2)
+  // }
 }
 export default Signup
