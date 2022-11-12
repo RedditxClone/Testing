@@ -7,11 +7,7 @@ describe('Test login', function () {
   //     loginpage.naviage()
   // })
 
-  it.only('Go to About', function () {
-    cy.visit('https://swproject.demosfortest.com/auth/signup')
-   // cy.url().should('eq', SETTINGSCOMP.PROFILE);
-    
-  })
+
 
   it('Go to SignUp page then come back again', function () {
     loginpage.naviage()

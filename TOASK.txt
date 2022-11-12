@@ -1,0 +1,7 @@
+1- should I test whether or not the textbox turned red in case of empty email .... so on ???????
+if so then how ?
+and whether or not a specific message appear in case the password is less than 8 char and so on ??
+
+
+
+2- when to return this and when not to do so ?????

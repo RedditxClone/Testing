@@ -1,0 +1,4 @@
+1- know how long the recaptcha remain before expiring to test it
+
+2- try to block someone then unblock it then block it again to make sure that we can't block then unblock the same person
+unless 24 hours passes
