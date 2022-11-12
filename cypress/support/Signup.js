@@ -63,7 +63,7 @@ class Signup {
 
 
   recaptcha(){
-    cy.get(SIGNUPCOMP.RECAPTCHA).click()
+    cy.get(SIGNUPCOMP.RECAPTCHA).check()
   }
 
   //TODO

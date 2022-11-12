@@ -44,36 +44,36 @@ class Login {
   // /////////////////////////////// gmail & password /////////////////////////
 
   //TODO --> it doesn't work
-  withgoogle (email, password) {
-    cy.get(LOGINCOMP.WITHGOOGLE)
-      .should('exist')
-      .click()
+  // withgoogle (email, password) {
+  //   cy.get(LOGINCOMP.WITHGOOGLE)
+  //     .should('exist')
+  //     .click()
 
-      cy.wait(5000);
+  //     cy.wait(5000);
 
 
-      cy.window().then(win => {
-        cy.stub(win, 'open').as('windowOpen');
-      });
+  //     cy.window().then(win => {
+  //       cy.stub(win, 'open').as('windowOpen');
+  //     });
 
-      cy.wait(5000);
-     // cy.get('#open-window').click()
-      // Google Login Redirection: Email Input
-      //cy.url().should('contain', 'accounts.google.com')
-        cy.get('input[type="email"]')
-        .clear()
-        .type(email)
-        .type('{enter}').wait(3000);
+  //     cy.wait(5000);
+  //    // cy.get('#open-window').click()
+  //     // Google Login Redirection: Email Input
+  //     //cy.url().should('contain', 'accounts.google.com')
+  //       cy.get('input[type="email"]')
+  //       .clear()
+  //       .type(email)
+  //       .type('{enter}').wait(3000);
 
-    // Google Login Redirection: Password Input
-    //cy.url().should('contain', 'accounts.google.com')
-      cy.get('input[type="password"]')
-      .clear()
-      .type(password)
-      .type('{enter}').wait(3000);
+  //   // Google Login Redirection: Password Input
+  //   //cy.url().should('contain', 'accounts.google.com')
+  //     cy.get('input[type="password"]')
+  //     .clear()
+  //     .type(password)
+  //     .type('{enter}').wait(3000);
 
     
-  }
+  // }
 
   // gglemail (gmail) {
   //   cy.get(LOGINCOMP.EMAIL)
