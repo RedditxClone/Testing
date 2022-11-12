@@ -6,10 +6,11 @@
     "ERRORMAIL": ".css-6wc5jl > p",
     "CONTINUE": ".MuiButtonBase-root",
     "LOGIN": "#BottomLink",
-    "USERNAME": ".css-6wc5jl",
-    "PASSWORD": ".css-bncy46",
+    "USERNAMEANDPASSWORDPARENT": ".css-6wc5jl",
+    "USERNAME": ".css-rsk4te",
+    "PASSWORD": ".css-nk5jtv",
     "SIGNUP": ".MuiButtonBase-root",
-    "RECAPTCHA": ".recaptcha-checkbox-border",
+    "RECAPTCHA": "#recaptcha-anchor-label",
     "RECAPTCHAEXPIRE": "",
     "BACK": ".css-pf5pmr",
     "USERNAMETAKENERR": ":nth-child(1) > p",
@@ -32,3 +33,5 @@
     "NEXTBUTTONFACE2": ""
 
 }
+
+
