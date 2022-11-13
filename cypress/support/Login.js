@@ -1,4 +1,4 @@
-import LOGINCOMP from '../support/LoginComp.json'
+import LOGINCOMP from './LoginComp.json'
 
 class Login {
   navigate () {

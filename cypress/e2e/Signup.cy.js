@@ -1,15 +1,15 @@
-import Signup from '../support/Signup'
+import Signup from '../support/signup'
 import SIGNUPCOMP from '../support/SignupComp.json'
 import HOMECOMP from '../support/HomeComp.json'
 import LOGINCOMP from '../support/LoginComp.json'
 
 describe('Test Signup', function () {
-  const signuppage = new Signup()
+  const signupPage = new Signup()
 
 
   it('Go to login page then come back again', function () {
-    signuppage.navigate() 
-    signuppage.login()
+    signupPage.navigate() 
+    signupPage.login()
     // assertion
     cy.url().should('eq', LOGINCOMP.URL)
     // go back to login again
@@ -20,16 +20,16 @@ describe('Test Signup', function () {
 
   // /////////////////////////////// Sign up with email /////////////////////////
   it('signup with already exist email', function () {
-    signuppage.email('ay7aga@gmail.com');
-    signuppage.continue()
+    signupPage.email('ay7aga@gmail.com');
+    signupPage.continue()
     // assertion
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
-    signuppage.back();
+    signupPage.back();
   })
 
   it('signup with empty email', function () {
     //empty email 
-    signuppage.email('   ');
+    signupPage.email('   ');
     // assertions
     //TODO --> check for the red border line and the message
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
@@ -42,7 +42,7 @@ describe('Test Signup', function () {
   
   it('signup with email with no domain', function () {
     //with no domain
-    signuppage.email('ay7aga ');
+    signupPage.email('ay7aga ');
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
     // assertion
     //TODO --> check for the red border line and the message
@@ -55,7 +55,7 @@ describe('Test Signup', function () {
   
   it('signup with email of domain only', function () {
     //with domain onlly
-    signuppage.email('@gmail.com');
+    signupPage.email('@gmail.com');
     // assertion
     //TODO --> check for the red border line and the message
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
@@ -66,15 +66,15 @@ describe('Test Signup', function () {
 
 
   it('signup with empty username and empty password', function () {
-    signuppage.email('doaa@gmail.com');
-    signuppage.continue();
+    signupPage.email('doaa@gmail.com');
+    signupPage.continue();
     //assertion
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
 
     //both are empty
-    signuppage.username(' ');
-    signuppage.password(' ');
+    signupPage.username(' ');
+    signupPage.password(' ');
     // assertion
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('Username must be between 3 and 20 characters');
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password')
@@ -82,15 +82,15 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
 
   })
   
   it('signup with pass only is empty & username is valid', function () {
     //pass only is empty & username is valid
-    signuppage.username('doaa');  //make it unique (make sure it doesn't exist in the DB)
+    signupPage.username('doaa');  //make it unique (make sure it doesn't exist in the DB)
     // assertion
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
@@ -98,37 +98,37 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
     
   })
   
   it('signup with username only is empty', function () {
     //username only is empty
-    // signuppage.navigate();
-    // signuppage.email('doaa@gmail.com');
-    // signuppage.continue();
+    // signupPage.navigate();
+    // signupPage.email('doaa@gmail.com');
+    // signupPage.continue();
 
 
 
-    signuppage.username(' ');  //
-    signuppage.password('123456789aa');  //make it unique (make sure it doesn't exist in the DB)
+    signupPage.username(' ');  //
+    signupPage.password('123456789aa');  //make it unique (make sure it doesn't exist in the DB)
     // assertion
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('Username must be between 3 and 20 characters');
     cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
     
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
   })
 
 
   it('sign up with username less than 3 and unique valid pass', function () {
-    signuppage.username('d3');  //
-    signuppage.password('123456789aa');
+    signupPage.username('d3');  //
+    signupPage.password('123456789aa');
     
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('Username must be between 3 and 20 characters');
@@ -136,14 +136,14 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
   })
 
   it('sign up with username less greater than 2 and invalid pass (less than 9)', function () {
-    signuppage.username('123');  //
-    signuppage.password('123456789');
+    signupPage.username('123');  //
+    signupPage.password('123456789');
     
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
@@ -152,15 +152,15 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
   })
   
   it('signup with repeated (invalid) username and valid password', function () {
     //invalid (repeated) username and valid pass
-    signuppage.username('repeateduser');  // TODO make an account with this uername to be considered as repeated
-    signuppage.password('valid123');
+    signupPage.username('repeateduser');  // TODO make an account with this uername to be considered as repeated
+    signupPage.password('valid123');
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('That username is already taken');
@@ -168,8 +168,8 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
 
   })
@@ -177,8 +177,8 @@ describe('Test Signup', function () {
 
   it('signup with valid (unique) username and repeated pass', function () {
     //invalid (repeated) username and valid pass
-    signuppage.username('newname');  // TODO make an account with this uername to be considered as repeated
-    signuppage.password('repeatedpass');
+    signupPage.username('newname');  // TODO make an account with this uername to be considered as repeated
+    signupPage.password('repeatedpass');
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
@@ -187,8 +187,8 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
 
-    signuppage.back();
-    signuppage.continue();
+    signupPage.back();
+    signupPage.continue();
     cy.reload();
 
   })
@@ -196,8 +196,8 @@ describe('Test Signup', function () {
 
   it('valid (unique) username and invalid (less than 8 char) pass', function () {
     //invalid (repeated) username and valid pass
-    signuppage.username('newname');  // TODO make an account with this uername to be considered as repeated
-    signuppage.password('123');
+    signupPage.username('newname');  // TODO make an account with this uername to be considered as repeated
+    signupPage.password('123');
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
@@ -211,25 +211,25 @@ describe('Test Signup', function () {
   })
 
   it('check the back button', function () {
-    signuppage.back();
+    signupPage.back();
     //assertion
     cy.url().should('eq', SIGNUPCOMP.URL);
 
   })
 
   // it('signup with valid email & valid uesrname & valid password & recaptcha expiration check', function () {
-  //   signuppage.navigate();
-  //   signuppage.email('doaa@gmail.com');
-  //   signuppage.continue();
-  //   signuppage.username('validuser');  // TODO make an account with this uername to be considered as repeated
-  //   signuppage.password('validpasss');
-  //   signuppage.recaptcha();
+  //   signupPage.navigate();
+  //   signupPage.email('doaa@gmail.com');
+  //   signupPage.continue();
+  //   signupPage.username('validuser');  // TODO make an account with this uername to be considered as repeated
+  //   signupPage.password('validpasss');
+  //   signupPage.recaptcha();
   //   //wait until recaptcha expire
   //   //cy.wait(8000);  //wait for 2 minutes
   //   //check whether or not it is expired
-  //   //signuppage.recaptchacheck()
-  //   //signuppage.recaptcha();
-  //   signuppage.signup();
+  //   //signupPage.recaptchacheck()
+  //   //signupPage.recaptcha();
+  //   signupPage.signup();
   //   // assertions
   //   cy.get(HOMECOMP.SIGNEDUPURL).contains('validuser');
   // })
@@ -261,25 +261,25 @@ describe('Test Signup', function () {
   //   //assertion
   //   cy.url().should('eq', SIGNUPCOMP.URL);
 
-  //   signuppage.email('doaa.magdy@gmail.com');
-  //   signuppage.continue();
+  //   signupPage.email('doaa.magdy@gmail.com');
+  //   signupPage.continue();
   //   cy.wait(2000);  //should we write it inside the function continue or here ???
   //   cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);  //assertion
-  //   signuppage.username('validuser');  // TODO make an account with this uername to be considered as repeated
-  //   signuppage.password('valid123');
-  //   signuppage.back();
+  //   signupPage.username('validuser');  // TODO make an account with this uername to be considered as repeated
+  //   signupPage.password('valid123');
+  //   signupPage.back();
   //   // assertions
   //   cy.wait(3000);
   //   cy.url().should('eq', SIGNUPCOMP.URL);
 
-  //   signuppage.checkemail('doaa.magdy@gmail.com');
-  //   signuppage.continue();
+  //   signupPage.checkemail('doaa.magdy@gmail.com');
+  //   signupPage.continue();
   //   //assertion
-  //   signuppage.checkusername('validuser');
-  //   signuppage.checkpass('valid123')
+  //   signupPage.checkusername('validuser');
+  //   signupPage.checkpass('valid123')
 
   //   //back again to continue testing --> with google / facebook
-  //   signuppage.back();
+  //   signupPage.back();
 
   // })
 

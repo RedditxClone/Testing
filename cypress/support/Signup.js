@@ -1,4 +1,4 @@
-import SIGNUPCOMP from '../support/SignupComp.json'
+import SIGNUPCOMP from './SignupComp.json'
 
 class Signup {
   navigate () {

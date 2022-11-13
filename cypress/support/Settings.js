@@ -1,4 +1,4 @@
-import SETTINGSCOMP from '../support/SettingsComp.json'
+import SETTINGSCOMP from './SettingsComp.json'
 
 class Settings {
   navigate () {

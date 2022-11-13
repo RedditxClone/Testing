@@ -1,7 +1,7 @@
-import HOMECOMP from '../support/HomeComp.json'
-import SETTINGSCOMP from '../support/SettingsComp.json'
-import LOGINCOMP from '../support/LoginComp.json'
-import SIGNUPCOMP from '../support/SignupComp.json'
+import HOMECOMP from './HomeComp.json'
+import SETTINGSCOMP from './SettingsComp.json'
+import LOGINCOMP from './LoginComp.json'
+import SIGNUPCOMP from './SignupComp.json'
 
 class Home {
   navigate () {
