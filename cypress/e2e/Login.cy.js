@@ -1,0 +1,162 @@
+import Login from '../support/login'
+import LOGINCOMP from '../support/LoginComp.json'
+import SIGNUPCOMP from '../support/SignupComp.json'
+import HOMECOMP from '../support/HomeComp.json'
+
+
+describe('Test login', function () {
+  const loginPage = new Login()
+
+
+  it('Go to SignUp page then come back again', function () {
+    loginPage.navigate()
+    loginPage.signup()
+    
+    // assertion
+    cy.url().should('eq', SIGNUPCOMP.URL)
+    // go back to login again
+    cy.go('back')
+  })
+
+  it('Go to forget username page then come back again', function () {
+    loginPage.forgetusername();
+    
+    // assertion
+    cy.url().should('eq', LOGINCOMP.FORGETUSERNAMEURL);
+    // go back to login again
+    cy.go('back')
+  })
+
+
+  it('Go to forget password page then come back again', function () {
+    loginPage.forgetpassword();
+    
+    // assertion
+    cy.url().should('eq', LOGINCOMP.FORGETPASSWORDURL);
+    // go back to login again
+    cy.go('back')
+  })
+
+
+  // /////////////////////////////// test cases for username & password method /////////////////////////
+
+
+  it('Login with valid username and empty password', function () {
+    loginPage.username('doaamagdy'); // TODO --> create it later
+    loginPage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  it('Login with empty username and valid password', function () {
+    loginPage.password('9876543210'); // TODO --> create it later
+    loginPage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+
+  it('Login with invalid username and password', function () {
+    loginPage.username('doaamagdy')
+    loginPage.password('123456789')
+    loginPage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  it('Login with invalid username and valid password', function () {
+    loginPage.username('doaamagdy')
+    loginPage.password('ay7aga123')
+    loginPage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  it('Login with valid username and invalid password', function () {
+    loginPage.username('ay7aga')
+    loginPage.password('notvalid')
+    loginPage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  // I put this case at the end to avoid needing to logout to complete other test cases (as back mehtod won't logout)
+  it('Login with valid username and password', function () {
+    loginPage.username('ay7aga'); 
+    loginPage.password('ay7aga123');
+    // assertion
+    cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    
+    loginPage.submit()
+    //assertion
+    cy.contains('ay7aga');
+    //cy.get(LOGINCOMP.USERNAMESIGNED).contains('ay7aga');
+    //cy.url().should('eq', LOGINCOMP.LOGEDINURL)
+  })
+
+  // /////////////////////////////// test cases for sign in with gmail /////////////////////////
+//   it.only('Login with empty gmail', function () {
+//     loginPage.navigate()
+//     loginPage.withgoogle('', '');
+//     cy.wait(3000)
+//     // TODO --> assertion (url should remian the same) but I will check by making sure that the email field stell exist and it doesn't proceed to next page
+//     cy.get(LOGINCOMP.EMAIL).should('exist')
+//   })
+
+//   it('Login with valid gmail & empty password', function () {
+//     // loginPage.withgoogle()
+//     loginPage.gglemail('doaa.magdy2001@gmail.com')
+//     loginPage.pressnext1()
+//     cy.wait(3000)
+//     loginPage.gglpassword('')
+//     loginPage.pressnext2()
+//     cy.wait(3000) // wait for 3 secs
+//     // assertion
+//     cy.get(LOGINCOMP.PASSGGL).should('exist')
+//     cy.go('back')
+//   })
+
+//   it('Login with invalid gmail & password', function () {
+//     // loginPage.withgoogle()
+//     loginPage.gglemail('ay7aga@gmail.com')
+//     loginPage.pressnext1()
+//     cy.wait(3000)
+//     loginPage.gglpassword('123456789')
+//     loginPage.pressnext2()
+//     cy.wait(3000) // wait for 3 secs
+//     // assertion
+//     cy.get(LOGINCOMP.PASSGGL).should('exist')
+//     cy.go('back')
+//   })
+
+//   it('Login with valid gmail & invalid password', function () {
+//     // loginPage.withgoogle()
+//     loginPage.gglemail('doaa.magdy2001@gmail.com')
+//     loginPage.pressnext1()
+//     cy.wait(3000)
+//     loginPage.gglpassword('123456789')
+//     loginPage.pressnext2()
+//     cy.wait(3000) // wait for 3 secs
+//     // assertion
+//     cy.url().should('contains', 'accounts.google.com')
+//     cy.get(LOGINCOMP.PASSGGL).should('exist')
+//     cy.go('back')
+//   })
+
+//   it('Login with valid gmail & valid password', function () {
+//     // loginPage.withgoogle()
+//     loginPage.gglemail('doaa.magdy2001@gmail.com')
+//     loginPage.pressnext1()
+//     cy.wait(3000)
+//     loginPage.gglpassword('') // to write it later
+//     loginPage.pressnext2()
+//     cy.wait(3000) // wait for 3 secs
+//     // assertion
+//     cy.get(LOGINCOMP.LOGEDINURLGGL).should('exist')
+//   })
+ })

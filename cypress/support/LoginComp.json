@@ -1,0 +1,26 @@
+{
+    "URL": "https://swproject.demosfortest.com/auth/login",
+    "LOGEDINURL": "",
+    "LOGEDINURLGGL": "https://www.reddit.com/user/Doaa_magdy",
+    "WITHGOOGLE": "#google-sso",
+    "EMAIL": "input",
+    "PASSGGL": ".whsOnd zHQkBf",
+    "NEXTBUTTON1": ".VfPpkd-vQzf8d",
+    "NEXTBUTTON2": ".VfPpkd-vQzf8d",
+
+    "USERNAME": "#username",
+    "PASSWORD": "#password",
+    "LOGIN": ".MuiButtonBase-root",
+    "SIGNUP": "#BottomLink",
+    "USERNAMESIGNED": ".MuiTypography-root MuiTypography-body1 css-4h8jt1",
+    "SIGNUPURL": "https://www.reddit.com/account/register/",
+
+    "PARENTFORGET": "#forget",
+    "FORGETUSERNAME": "",
+    "FORGETPASSWORD": "",
+    "FORGETUSERNAMEURL": "https://swproject.demosfortest.com/auth/forgetuname",
+    "FORGETPASSWORDURL": "https://swproject.demosfortest.com/auth/forgetupassword" 
+}
+
+
+

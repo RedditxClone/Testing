@@ -1,0 +1,37 @@
+{
+    "URL": "https://swproject.demosfortest.com/auth/signup",
+    "SIGNEDUPURL": "",
+    "CONTINUEURL":"https://swproject.demosfortest.com/new/chooseuname",
+    "EMAIL": ".css-6wc5jl > div",
+    "ERRORMAIL": ".css-6wc5jl > p",
+    "CONTINUE": ".MuiButtonBase-root",
+    "LOGIN": "#BottomLink",
+    "USERNAMEANDPASSWORDPARENT": ".css-6wc5jl",
+    "USERNAME": ".css-rsk4te",
+    "PASSWORD": ".css-nk5jtv",
+    "SIGNUP": ".MuiButtonBase-root",
+    "RECAPTCHA": "#recaptcha-anchor-label",
+    "RECAPTCHAEXPIRE": "",
+    "BACK": ".css-pf5pmr",
+    "USERNAMETAKENERR": ":nth-child(1) > p",
+    "USERNAMERULE": ":nth-child(1) > p",
+    "INVALIDPASS": ":nth-child(2) > p",
+
+    "WITHGOOGLE": "",
+    "EMAILGGL": "#username",
+    "PASSWORDGGL": "#password",
+    "SIGNUPGGL": "#signup",
+    "NEXTBUTTONGGL1": "",
+    "NEXTBUTTONGGL2": "",
+
+    "WITHFACEBOOK": "",
+    "USERNAMEFACEBOOK": "#username",
+    "PASSWORDFACEBOOK": "#password",
+    "ACCOUNTFACEBOOK": "",
+    "SIGNUPGACEBOOK": "#signup",
+    "NEXTBUTTONFACE1": "",
+    "NEXTBUTTONFACE2": ""
+
+}
+
+
