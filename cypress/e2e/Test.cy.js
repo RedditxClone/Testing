@@ -14,7 +14,7 @@
 
 
 it.only('visit setting', function () {
-  cy.visit('https://swproject.demosfortest.com/auth/signup');
+  cy.visit('https://swproject.demosfortest.com/settings');
 })
 
 

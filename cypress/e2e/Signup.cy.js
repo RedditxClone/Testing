@@ -8,7 +8,7 @@ describe('Test Signup', function () {
 
 
   it('Go to login page then come back again', function () {
-    signuppage.naviage() 
+    signuppage.navigate() 
     signuppage.login()
     // assertion
     cy.url().should('eq', LOGINCOMP.URL)
@@ -106,7 +106,7 @@ describe('Test Signup', function () {
   
   it('signup with username only is empty', function () {
     //username only is empty
-    // signuppage.naviage();
+    // signuppage.navigate();
     // signuppage.email('doaa@gmail.com');
     // signuppage.continue();
 
@@ -218,7 +218,7 @@ describe('Test Signup', function () {
   })
 
   // it('signup with valid email & valid uesrname & valid password & recaptcha expiration check', function () {
-  //   signuppage.naviage();
+  //   signuppage.navigate();
   //   signuppage.email('doaa@gmail.com');
   //   signuppage.continue();
   //   signuppage.username('validuser');  // TODO make an account with this uername to be considered as repeated

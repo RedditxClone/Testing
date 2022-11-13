@@ -1,7 +1,7 @@
 import LOGINCOMP from '../support/LoginComp.json'
 
 class Login {
-  naviage () {
+  navigate () {
     cy.visit(LOGINCOMP.URL)
   }
 
@@ -10,12 +10,16 @@ class Login {
   }
 
   forgetusername(){
-    cy.get(LOGINCOMP.FORGETUSERNAME).click()
+    cy.get(LOGINCOMP.PARENTFORGET)
+      .children().first()
+      .click()
 
   }
 
   forgetpassword(){
-    cy.get(LOGINCOMP.FORGETPASSWORD).click()
+    cy.get(LOGINCOMP.PARENTFORGET)
+      .children().eq(1)
+      .click();
 
   }
 

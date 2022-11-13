@@ -2,13 +2,13 @@ import Home from '../support/Home'
 import HOMECOMP from '../support/HomeComp.json'
 import Login from '../support/Login'
 
-describe('Test login', function () {
+describe('Test Home', function () {
   const loginpage = new Login()
   const homepage = new Home()
 
 
   it('Go to Signup page', function () {
-    homepage.naviage();
+    homepage.navigate();
     homepage.gotosignup();
     cy.go('back')
     
@@ -22,30 +22,61 @@ describe('Test login', function () {
     loginpage.submit();
 
     //assertion
-    cy.get(HOMECOMP.USERNAME).contains('ay7aga');
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
   })
 
-  it('Go to user settings page', function () {
-    homepage.gotousersetting();
+  // it('Go to user settings page', function () {
+  //   homepage.gotousersetting();
     
-  })
+  // })
 
   
   it('Go to user settings page then come back to home', function () {
     homepage.gotousersetting();
     homepage.comebacktohome();
+
+    //I will back due to the bug here --> the user setting cover the icon (bug) to be able to complete the script
+    cy.go('back');
     
   })
 
 
   it('try to open community window then close it without create with cross button', function () {
     homepage.openclosecommwindow();
+    cy.reload()
     
   })
 
+  it('Go to login page and login', function () {
+    homepage.gotologin();
+    //login with a known user
+    loginpage.username('ay7aga');
+    loginpage.password('ay7aga123');
+    loginpage.submit();
+
+    //assertion
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
+    
+  })
+
+  
+
   it('try to open community window then close it without create with cancel button', function () {
     homepage.opencancelcommwindow();
+    cy.reload()
+    
+  })
+
+  it('Go to login page and login', function () {
+    homepage.gotologin();
+    //login with a known user
+    loginpage.username('ay7aga');
+    loginpage.password('ay7aga123');
+    loginpage.submit();
+
+    //assertion
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
   })
 
@@ -56,6 +87,7 @@ describe('Test login', function () {
     
     
   })
+
 
   it('test create community with empty name', function () {
     homepage.createcommunity('', 1, false);
@@ -92,11 +124,5 @@ describe('Test login', function () {
         .click();
 
   })
-
-
-
-
-
-
 
  })

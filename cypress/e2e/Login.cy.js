@@ -1,29 +1,28 @@
 import Login from '../support/Login'
 import LOGINCOMP from '../support/LoginComp.json'
+import SIGNUPCOMP from '../support/SignupComp.json'
+import HOMECOMP from '../support/HomeComp.json'
+
 
 describe('Test login', function () {
   const loginpage = new Login()
-  // beforeEach(()=>{
-  //     loginpage.naviage()
-  // })
-
 
 
   it('Go to SignUp page then come back again', function () {
-    loginpage.naviage()
+    loginpage.navigate()
     loginpage.signup()
-    cy.wait(5000) // wait for 5 secs
+    
     // assertion
-    cy.url().should('eq', LOGINCOMP.SIGNUPURL)
+    cy.url().should('eq', SIGNUPCOMP.URL)
     // go back to login again
     cy.go('back')
   })
 
   it('Go to forget username page then come back again', function () {
     loginpage.forgetusername();
-    cy.wait(3000); // wait for 5 secs
+    
     // assertion
-    cy.url().should('eq', LOGINCOMP.FORGETPASSWORDURL);
+    cy.url().should('eq', LOGINCOMP.FORGETUSERNAMEURL);
     // go back to login again
     cy.go('back')
   })
@@ -31,7 +30,7 @@ describe('Test login', function () {
 
   it('Go to forget password page then come back again', function () {
     loginpage.forgetpassword();
-    cy.wait(3000); // wait for 5 secs
+    
     // assertion
     cy.url().should('eq', LOGINCOMP.FORGETPASSWORDURL);
     // go back to login again
@@ -40,10 +39,13 @@ describe('Test login', function () {
 
 
   // /////////////////////////////// test cases for username & password method /////////////////////////
+
+
   it('Login with valid username and empty password', function () {
     loginpage.username('doaamagdy'); // TODO --> create it later
     loginpage.submit()
     // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
     cy.url().should('eq', LOGINCOMP.URL)
   })
 
@@ -51,6 +53,7 @@ describe('Test login', function () {
     loginpage.password('9876543210'); // TODO --> create it later
     loginpage.submit()
     // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
     cy.url().should('eq', LOGINCOMP.URL)
   })
 
@@ -60,21 +63,45 @@ describe('Test login', function () {
     loginpage.password('123456789')
     loginpage.submit()
     // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  it('Login with invalid username and valid password', function () {
+    loginpage.username('doaamagdy')
+    loginpage.password('ay7aga123')
+    loginpage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    cy.url().should('eq', LOGINCOMP.URL)
+  })
+
+  it('Login with valid username and invalid password', function () {
+    loginpage.username('ay7aga')
+    loginpage.password('notvalid')
+    loginpage.submit()
+    // assertion
+    //cy.get(LOGINCOMP.LOGIN).should('be.enabled');
     cy.url().should('eq', LOGINCOMP.URL)
   })
 
   // I put this case at the end to avoid needing to logout to complete other test cases (as back mehtod won't logout)
-  it('Login with invalid username and password', function () {
-    loginpage.username('doaamagdy')
-    loginpage.password('9876543210')
-    loginpage.submit()
+  it('Login with valid username and password', function () {
+    loginpage.username('ay7aga'); 
+    loginpage.password('ay7aga123');
     // assertion
-    cy.url().should('eq', LOGINCOMP.LOGEDINURL)
+    cy.get(LOGINCOMP.LOGIN).should('be.enabled');
+    
+    loginpage.submit()
+    //assertion
+    cy.contains('ay7aga');
+    //cy.get(LOGINCOMP.USERNAMESIGNED).contains('ay7aga');
+    //cy.url().should('eq', LOGINCOMP.LOGEDINURL)
   })
 
   // /////////////////////////////// test cases for sign in with gmail /////////////////////////
 //   it.only('Login with empty gmail', function () {
-//     loginpage.naviage()
+//     loginpage.navigate()
 //     loginpage.withgoogle('', '');
 //     cy.wait(3000)
 //     // TODO --> assertion (url should remian the same) but I will check by making sure that the email field stell exist and it doesn't proceed to next page

@@ -4,7 +4,7 @@ import LOGINCOMP from '../support/LoginComp.json'
 import SIGNUPCOMP from '../support/SignupComp.json'
 
 class Home {
-  naviage () {
+  navigate () {
     cy.visit(HOMECOMP.URL)
   }
 

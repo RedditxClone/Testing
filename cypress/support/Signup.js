@@ -1,7 +1,7 @@
 import SIGNUPCOMP from '../support/SignupComp.json'
 
 class Signup {
-  naviage () {
+  navigate () {
     cy.visit(SIGNUPCOMP.URL)
   }
 

@@ -1,12 +1,12 @@
 import SETTINGSCOMP from '../support/SettingsComp.json'
 
 class Settings {
-  naviage () {
+  navigate () {
     cy.visit(SETTINGSCOMP.URL)
   }
 
   ///////// Account Tap
-  naviageAcc () {
+  navigateAcc () {
     cy.visit(SETTINGSCOMP.ACCOUNT)
   }
 
@@ -15,7 +15,6 @@ class Settings {
     cy.get(SETTINGSCOMP.CEMAIL)
         .should('exist')
         .click();
-    cy.wait(2000);
     cy.get(SETTINGSCOMP.CURRENTPASS)
         .should('exist')
         .clear()
@@ -24,15 +23,23 @@ class Settings {
         .should('exist')
         .clear()
         .type(newmail);
-    cy.get(SETTINGSCOMP.SAVEEMIAL).click();
-
-    //assertion  --> make sure the email have changed
-    cy.get(SETTINGSCOMP.CURRENTMAIL)
-        .should('eq', newmail);
+    
 
 
     return this
 
+  }
+
+  savenewmail(){
+    cy.get(SETTINGSCOMP.SAVEEMIAL)
+      .should('be.enabled')
+      .click();
+  }
+
+  closeupdatemail(){
+    cy.get(SETTINGSCOMP.CLOSEUPDATEMAIL)
+      .should('exist')
+      .click();
   }
 
   //not supported by the front yet
@@ -109,7 +116,7 @@ class Settings {
 
 
   ///// Profile Tap
-  naviageprof() {
+  navigateprof() {
     cy.visit(SETTINGSCOMP.PROFILE)
   }
 
