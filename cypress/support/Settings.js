@@ -225,6 +225,15 @@ class Settings {
 
 
   //////// safety & privacy
+
+  navigatesafetyprivacy(){
+    cy.get(SETTINGSCOMP.SAFETYANDPRIVACY)
+      .should('exist')
+      .click();
+
+  }
+
+
   blocknewuser(username){
     cy.get(SETTINGSCOMP.BLOCKNEWUSER)
         .should('exist')
@@ -237,7 +246,6 @@ class Settings {
     cy.reload()
     //assertion
 
-
   }
 
   //TODO Later 
@@ -245,5 +253,26 @@ class Settings {
 
   }
 
+
+  //Feed settings
+  navigatetofeed(){
+    cy.get(SETTINGSCOMP.FEED)
+      .should('exist')
+      .click();
+  }
+
+  enabledisableadultcontent(){
+    cy.get(SETTINGSCOMP.ADULTCONTENT)
+      .should('exist')
+      .click();
+  }
+
+  enabledisableautoplaymedia(){
+    cy.get(SETTINGSCOMP.AUTOPLAYMEDIA)
+      .should('exist')
+      .click();
+  }
+
+  enabledisableunsubscribefromallmails()
 }
 export default Settings

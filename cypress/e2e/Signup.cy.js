@@ -11,7 +11,7 @@ describe('Test Signup', function () {
     signupPage.navigate() 
     signupPage.login()
     // assertion
-    cy.url().should('eq', LOGINCOMP.URL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  LOGINCOMP.URL)
     // go back to login again
     cy.go('back')
   })
@@ -23,7 +23,7 @@ describe('Test Signup', function () {
     signupPage.email('ay7aga@gmail.com');
     signupPage.continue()
     // assertion
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
     signupPage.back();
   })
 
@@ -34,7 +34,7 @@ describe('Test Signup', function () {
     //TODO --> check for the red border line and the message
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
     cy.get(SIGNUPCOMP.CONTINUE).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.URL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 
     
   })
@@ -48,7 +48,7 @@ describe('Test Signup', function () {
     //TODO --> check for the red border line and the message
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
     cy.get(SIGNUPCOMP.CONTINUE).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.URL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
     
   })
 
@@ -60,7 +60,7 @@ describe('Test Signup', function () {
     //TODO --> check for the red border line and the message
     cy.get(SIGNUPCOMP.ERRORMAIL).contains('Please fix your email to continue');
     cy.get(SIGNUPCOMP.CONTINUE).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.URL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
     
   })
 
@@ -69,7 +69,7 @@ describe('Test Signup', function () {
     signupPage.email('doaa@gmail.com');
     signupPage.continue();
     //assertion
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
 
     //both are empty
@@ -80,7 +80,7 @@ describe('Test Signup', function () {
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password')
     //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
 
     signupPage.back();
     signupPage.continue();
@@ -96,7 +96,7 @@ describe('Test Signup', function () {
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
     //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
 
     signupPage.back();
     signupPage.continue();
@@ -118,7 +118,7 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('Username must be between 3 and 20 characters');
     cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL)
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
     
     signupPage.back();
     signupPage.continue();
@@ -134,7 +134,7 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('Username must be between 3 and 20 characters');
     cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
     signupPage.back();
     signupPage.continue();
@@ -150,7 +150,7 @@ describe('Test Signup', function () {
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
     //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
     signupPage.back();
     signupPage.continue();
@@ -166,7 +166,7 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.USERNAMERULE).contains('That username is already taken');
     //cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
     signupPage.back();
     signupPage.continue();
@@ -185,7 +185,7 @@ describe('Test Signup', function () {
     //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
     //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
     signupPage.back();
     signupPage.continue();
@@ -204,7 +204,7 @@ describe('Test Signup', function () {
    // cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
    //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
     
 
@@ -213,7 +213,7 @@ describe('Test Signup', function () {
   it('check the back button', function () {
     signupPage.back();
     //assertion
-    cy.url().should('eq', SIGNUPCOMP.URL);
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 
   })
 
@@ -255,22 +255,22 @@ describe('Test Signup', function () {
   //       .click();
   //   cy.wait(1000);
   //   //assertion
-  //   cy.url().should('eq', LOGINCOMP.URL);
+  //   cy.url().should('eq', Cypress.env('baseUrl') +  LOGINCOMP.URL);
   //   cy.get(LOGINCOMP.SIGNUP).click();
   //   cy.wait(2000);
   //   //assertion
-  //   cy.url().should('eq', SIGNUPCOMP.URL);
+  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 
   //   signupPage.email('doaa.magdy@gmail.com');
   //   signupPage.continue();
   //   cy.wait(2000);  //should we write it inside the function continue or here ???
-  //   cy.url().should('eq', SIGNUPCOMP.CONTINUEURL);  //assertion
+  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);  //assertion
   //   signupPage.username('validuser');  // TODO make an account with this uername to be considered as repeated
   //   signupPage.password('valid123');
   //   signupPage.back();
   //   // assertions
   //   cy.wait(3000);
-  //   cy.url().should('eq', SIGNUPCOMP.URL);
+  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 
   //   signupPage.checkemail('doaa.magdy@gmail.com');
   //   signupPage.continue();

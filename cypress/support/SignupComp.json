@@ -1,7 +1,7 @@
 {
-    "URL": "https://swproject.demosfortest.com/auth/signup",
+    "URL": "/auth/signup",
     "SIGNEDUPURL": "",
-    "CONTINUEURL":"https://swproject.demosfortest.com/new/chooseuname",
+    "CONTINUEURL":"/new/chooseuname",
     "EMAIL": ".css-6wc5jl > div",
     "ERRORMAIL": ".css-6wc5jl > p",
     "CONTINUE": ".MuiButtonBase-root",

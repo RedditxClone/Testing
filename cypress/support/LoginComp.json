@@ -1,5 +1,5 @@
 {
-    "URL": "https://swproject.demosfortest.com/auth/login",
+    "URL": "/auth/login",
     "LOGEDINURL": "",
     "LOGEDINURLGGL": "https://www.reddit.com/user/Doaa_magdy",
     "WITHGOOGLE": "#google-sso",
