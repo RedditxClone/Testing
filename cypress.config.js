@@ -3,6 +3,7 @@ require('dotenv').config()
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  
   projectId: "pz79y6",
 
   resolve: {
