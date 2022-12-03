@@ -62,7 +62,7 @@ class Signup {
     cy.get(SIGNUPCOMP.USERNAMEANDPASSWORDPARENT).children().last().click()
     //cy.get(SIGNUPCOMP.PASSWORD)  // :nth-child(2) > div > .css-rsk4te
     //cy.get('.css-nk5jtv')
-     // .clear()
+      .clear()
       .type(password)
     return this
   }
@@ -99,70 +99,6 @@ class Signup {
   }
 
 
-  // /////////////////////////////// With google /////////////////////////
-
-  // withgoogle () {
-  //   cy.get(SIGNUPCOMP.WITHGOOGLE)
-  //     .should('exist')
-  //     .click()
-  // }
-
-  // gglemail (gmail) {
-  //   cy.get(SIGNUPCOMP.EMAILGGL)
-  //     .should('exist')
-  //     .clear()
-  //     .type(gmail)
-  //   return this
-  // }
-
-  // gglpassword (password) {
-  //   cy.get(SIGNUPCOMP.PASSGGL)
-  //     .should('exist')
-  //     .clear()
-  //     .type(password)
-  //   return this
-  // }
-
-  // pressnext1 () {
-  //   cy.get(SIGNUPCOMP.NEXTBUTTONGGL1)
-  // }
-
-  // pressnext2 () {
-  //   cy.get(SIGNUPCOMP.NEXTBUTTONGGL2)
-  // }
-
-
-
-  // // /////////////////////////////// With facebook /////////////////////////
-
-  // withfacebook () {
-  //   cy.get(SIGNUPCOMP.WITHFACEBOOK)
-  //     .should('exist')
-  //     .click()
-  // }
-
-  // facebookaccount (facebook) {
-  //   cy.get(SIGNUPCOMP.ACCOUNTFACEBOOK)
-  //     .should('exist')
-  //     .clear()
-  //     .type(gmail)
-  //   return this
-  // }
-
-  // gglpassword (password) {
-  //   cy.get(SIGNUPCOMP.PASSWORDFACEBOOK)
-  //     .should('exist')
-  //     .clear()
-  //     .type(password)
-  //   return this
-  // }
-
-  // pressnext1 () {
-  //   cy.get(SIGNUPCOMP.NEXTBUTTONFACE1)
-  // }
-
-  // pressnext2 () {
-  //   cy.get(SIGNUPCOMP.NEXTBUTTONFACE2)
-  // }
+  
 }
 export default Signup

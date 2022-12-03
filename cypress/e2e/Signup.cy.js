@@ -147,7 +147,7 @@ describe('Test Signup', function () {
     
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
-    //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
+    cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
     //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
@@ -159,7 +159,7 @@ describe('Test Signup', function () {
   
   it('signup with repeated (invalid) username and valid password', function () {
     //invalid (repeated) username and valid pass
-    signupPage.username('repeateduser');  // TODO make an account with this uername to be considered as repeated
+    signupPage.username('doaamagdy');  // TODO make an account with this uername to be considered as repeated
     signupPage.password('valid123');
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
@@ -178,7 +178,7 @@ describe('Test Signup', function () {
   it('signup with valid (unique) username and repeated pass', function () {
     //invalid (repeated) username and valid pass
     signupPage.username('newname');  // TODO make an account with this uername to be considered as repeated
-    signupPage.password('repeatedpass');
+    signupPage.password('doaamagdypassword');
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
@@ -201,8 +201,8 @@ describe('Test Signup', function () {
     // TODO  --> check for the textbox to be turned into red and check for the message written below it
     //assertions
     cy.get(SIGNUPCOMP.USERNAMERULE).should('not.exist');
-   // cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
-   //cy.contains('Invalid Password');
+    cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
+    //cy.contains('Invalid Password');
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
@@ -217,22 +217,25 @@ describe('Test Signup', function () {
 
   })
 
-  // it('signup with valid email & valid uesrname & valid password & recaptcha expiration check', function () {
-  //   signupPage.navigate();
-  //   signupPage.email('doaa@gmail.com');
-  //   signupPage.continue();
-  //   signupPage.username('validuser');  // TODO make an account with this uername to be considered as repeated
-  //   signupPage.password('validpasss');
-  //   signupPage.recaptcha();
-  //   //wait until recaptcha expire
-  //   //cy.wait(8000);  //wait for 2 minutes
-  //   //check whether or not it is expired
-  //   //signupPage.recaptchacheck()
-  //   //signupPage.recaptcha();
-  //   signupPage.signup();
-  //   // assertions
-  //   cy.get(HOMECOMP.SIGNEDUPURL).contains('validuser');
-  // })
+  it('signup with valid email & valid uesrname & valid password & recaptcha expiration check', function () {
+    //signupPage.navigate();
+    signupPage.email('doaa@gmail.com');
+    signupPage.continue();
+    signupPage.username('doaamagdyibrahim');  // TODO make an account with this uername to be considered as repeated
+    signupPage.password('doaamagdyibrahimpassword');
+    //signupPage.recaptcha();
+    //wait until recaptcha expire
+    //cy.wait(8000);  //wait for 2 minutes
+    //check whether or not it is expired
+    //signupPage.recaptchacheck()
+    //signupPage.recaptcha();
+    //signupPage.signup();
+    // assertions   -->  just make sure that the error messages don't appear any more
+    cy.should('not.have.text', "Invalid Password")
+    cy.should('not.have.text', "That username is already taken")
+    cy.should('not.have.text', "Username must be between 3 and 20 characters")
+    //cy.get(HOMECOMP.SIGNEDUPURL).contains('validuser');
+  })
 
 
 
@@ -240,66 +243,4 @@ describe('Test Signup', function () {
 })
 
 
-
-
-
-
-
-
-
-  // it('check the back button', function () {
-  //   //first logout from the created account in the above step
-  //   cy.get(HOMECOMP.DROPDOWNRIGHT)
-  //       .scrollTo('bottom')
-  //       .get(HOMECOMP.LOGOUT)
-  //       .click();
-  //   cy.wait(1000);
-  //   //assertion
-  //   cy.url().should('eq', Cypress.env('baseUrl') +  LOGINCOMP.URL);
-  //   cy.get(LOGINCOMP.SIGNUP).click();
-  //   cy.wait(2000);
-  //   //assertion
-  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
-
-  //   signupPage.email('doaa.magdy@gmail.com');
-  //   signupPage.continue();
-  //   cy.wait(2000);  //should we write it inside the function continue or here ???
-  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);  //assertion
-  //   signupPage.username('validuser');  // TODO make an account with this uername to be considered as repeated
-  //   signupPage.password('valid123');
-  //   signupPage.back();
-  //   // assertions
-  //   cy.wait(3000);
-  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
-
-  //   signupPage.checkemail('doaa.magdy@gmail.com');
-  //   signupPage.continue();
-  //   //assertion
-  //   signupPage.checkusername('validuser');
-  //   signupPage.checkpass('valid123')
-
-  //   //back again to continue testing --> with google / facebook
-  //   signupPage.back();
-
-  // })
-
-
-
-
-
-
-//visit this page
-
-
-//click continue with google
-
-
-
-//1s test --> both email and password are correct
-//enter the email and click the next button        --> what if there already some saved mails ??????
- 
-//
-
-
-//enter the passworkd and click next
 
