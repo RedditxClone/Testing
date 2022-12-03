@@ -1,9 +1,9 @@
 import Settings from '../support/settings'
-import SETTINGSCOMP from '../support/SettingsComp.json'
+import SETTINGSCOMP from '../support/settings-comp.json'
 import Home from '../support/home'
 import Login from '../support/login'
-import HOMECOMP from '../support/HomeComp.json'
-import LOGINCOMP from '../support/LoginComp.json'
+import HOMECOMP from '../support/home-comp.json'
+import LOGINCOMP from '../support/login-comp.json'
 
 
 describe('Test Settings', function () {

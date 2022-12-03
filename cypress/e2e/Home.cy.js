@@ -1,5 +1,5 @@
 import Home from '../support/home'
-import HOMECOMP from '../support/HomeComp.json'
+import HOMECOMP from '../support/home-comp.json'
 import Login from '../support/login'
 
 describe('Test Home', function () {

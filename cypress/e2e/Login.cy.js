@@ -1,7 +1,7 @@
 import Login from '../support/login'
-import LOGINCOMP from '../support/LoginComp.json'
-import SIGNUPCOMP from '../support/SignupComp.json'
-import HOMECOMP from '../support/HomeComp.json'
+import LOGINCOMP from '../support/login-comp.json'
+import SIGNUPCOMP from '../support/signup-comp.json'
+import HOMECOMP from '../support/home-comp.json'
 
 
 describe('Test login', function () {
