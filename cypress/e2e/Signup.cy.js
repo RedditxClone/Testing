@@ -1,7 +1,7 @@
 import Signup from '../support/signup'
-import SIGNUPCOMP from '../support/SignupComp.json'
-import HOMECOMP from '../support/HomeComp.json'
-import LOGINCOMP from '../support/LoginComp.json'
+import SIGNUPCOMP from '../support/signup-comp.json'
+import HOMECOMP from '../support/home-comp.json'
+import LOGINCOMP from '../support/login-comp.json'
 
 describe('Test Signup', function () {
   const signupPage = new Signup()
