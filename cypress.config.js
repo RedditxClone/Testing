@@ -4,6 +4,11 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   projectId: "pz79y6",
+
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
+
   env: {
     baseUrl: process.env.BASE_URL, //'https://swproject.demosfortest.com',
   },

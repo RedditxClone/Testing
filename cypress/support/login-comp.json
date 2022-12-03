@@ -1,12 +1,7 @@
 {
     "URL": "/auth/login",
-    "LOGEDINURL": "",
-    "LOGEDINURLGGL": "https://www.reddit.com/user/Doaa_magdy",
-    "WITHGOOGLE": "#google-sso",
-    "EMAIL": "input",
-    "PASSGGL": ".whsOnd zHQkBf",
-    "NEXTBUTTON1": ".VfPpkd-vQzf8d",
-    "NEXTBUTTON2": ".VfPpkd-vQzf8d",
+    "LOGEDINURL": "/",
+    
 
     "USERNAME": "#username",
     "PASSWORD": "#password",
