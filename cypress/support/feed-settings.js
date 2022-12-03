@@ -3,7 +3,7 @@ import FEEDSETTINGSCOMP from '../support/feed-settings-comp.json'
 class FeedSettings {
 
     navigateFeed(){
-        cy.visit(FEEDSETTINGSCOMP.FEED)
+        cy.get(FEEDSETTINGSCOMP.SETTINGSTABS).children().eq(3).click();
 
     }
 
@@ -35,7 +35,7 @@ class FeedSettings {
 
 
     navigateAcc () {
-        cy.visit(FEEDSETTINGSCOMP.ACCOUNT)
+        cy.get(FEEDSETTINGSCOMP.SETTINGSTABS).children().eq(0).click();
     }
 
 

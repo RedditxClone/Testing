@@ -2,6 +2,8 @@
     "FEED": "/settings/feed",
     "ADULTCONTENT": ".content-preferences > :nth-child(2) > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
     "AUTOPLAYMEDIA": ":nth-child(6) > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+    "CHANGESSAVEDMSG": "",
+    "SETTINGSTABS": "nav",
     "ACCOUNT": "/settings/account"
 }
 

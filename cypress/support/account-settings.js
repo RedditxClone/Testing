@@ -7,7 +7,8 @@ class AccSettings {
 
   ///////// Account Tap
   navigateAcc () {
-    cy.visit(ACCSETTINGSCOMP.ACCOUNT)
+    cy.get(ACCSETTINGSCOMP.SETTINGSTABS).children().eq(0).click();
+    //cy.visit(ACCSETTINGSCOMP.ACCOUNT)
   }
 
   //not completed yet

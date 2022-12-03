@@ -4,7 +4,8 @@ class SPSettings {
   //////// safety & privacy
 
   navigatesafetyprivacy(){
-    cy.visit(SPSETTINGSCOMP.SAFETYANDPRIVACY);
+    cy.get(SPSETTINGSCOMP.SETTINGSTABS).children().eq(2).click();
+    //cy.visit(SPSETTINGSCOMP.SAFETYANDPRIVACY);
 
   }
 
@@ -28,7 +29,8 @@ class SPSettings {
 
 
   navigateprof() {
-    cy.visit(SPSETTINGSCOMP.PROFILE)
+    cy.get(SPSETTINGSCOMP.SETTINGSTABS).children().eq(1).click();
+    //cy.visit(SPSETTINGSCOMP.PROFILE)
   }
 
 

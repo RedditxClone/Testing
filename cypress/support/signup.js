@@ -31,19 +31,19 @@ class Signup {
     cy.get(SIGNUPCOMP.BACK).click()
   }
 
-  checkemail(email){
+  checkEmail(email){
     cy.get(SIGNUPCOMP.EMAIL)
       .contains(email);
     
   }
 
-  checkusername(username){
+  checkUsername(username){
     cy.get(SIGNUPCOMP.USERNAME)
       .contains(username);
     
   }
 
-  checkpass(pass){
+  checkPass(pass){
     cy.get(SIGNUPCOMP.PASSWORD)
       .contains(pass);
     

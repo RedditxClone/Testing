@@ -15,14 +15,12 @@ describe('Test Settings', function () {
     loginPage.password('doaamagdypassword');
     loginPage.submit();
     homePage.gotousersetting();
-    //settingsPage.navigateAcc();
     cy.url().should('eq', Cypress.env('baseUrl') + ACCSETTINGSCOMP.ACCOUNT);
     
   })
 
 
   it('Change the country', function (){
-    //settingsPage.navigateAcc();
     settingsPage.changecountry('Ecuador');
 
     //assertions

@@ -22,10 +22,20 @@ describe('Test Settings', function () {
     
   })
 
+
+  it('make sure that all default values are like original reddit', function () {
+    cy.get(FEEDSETTINGSCOMP.ADULTCONTENT)
+      .should('not.be.checked')
+
+    cy.get(FEEDSETTINGSCOMP.AUTOPLAYMEDIA)
+      .should('be.checked')
+  })
+
   it('check the adult content checkbox', function () {
     settingsPage.checkAdultContent();
 
     //assertion
+    cy.get(FEEDSETTINGSCOMP.CHANGESSAVEDMSG).contains('Changes saved')
     settingsPage.navigateAcc();
     settingsPage.navigateFeed();
     cy.get(FEEDSETTINGSCOMP.ADULTCONTENT)
@@ -38,9 +48,25 @@ describe('Test Settings', function () {
     settingsPage.uncheckAdultContent();
 
     //assertion
+    cy.get(FEEDSETTINGSCOMP.CHANGESSAVEDMSG).contains('Changes saved')
     settingsPage.navigateAcc();
     settingsPage.navigateFeed();
     cy.get(FEEDSETTINGSCOMP.ADULTCONTENT)
+      .should('not.be.checked')
+
+    
+  })
+
+
+
+  it('uncheck the autoplay media checkbox', function () {
+    settingsPage.uncheckAutoplayMedia();
+
+    //assertion
+    cy.get(FEEDSETTINGSCOMP.CHANGESSAVEDMSG).contains('Changes saved')
+    settingsPage.navigateAcc();
+    settingsPage.navigateFeed();
+    cy.get(FEEDSETTINGSCOMP.AUTOPLAYMEDIA)
       .should('not.be.checked')
 
     
@@ -51,6 +77,7 @@ describe('Test Settings', function () {
     settingsPage.checkAutoplayMedia();
 
     //assertion
+    cy.get(FEEDSETTINGSCOMP.CHANGESSAVEDMSG).contains('Changes saved')
     settingsPage.navigateAcc();
     settingsPage.navigateFeed();
     cy.get(FEEDSETTINGSCOMP.AUTOPLAYMEDIA)
@@ -58,20 +85,5 @@ describe('Test Settings', function () {
 
     
   })
-
-
-  it('uncheck the autoplay media checkbox', function () {
-    settingsPage.uncheckAutoplayMedia();
-
-    //assertion
-    settingsPage.navigateAcc();
-    settingsPage.navigateFeed();
-    cy.get(FEEDSETTINGSCOMP.AUTOPLAYMEDIA)
-      .should('not.be.checked')
-
-    
-  })
-
-
 
  })

@@ -1,0 +1,10 @@
+{
+    "EMAILS": "/settings/emails",
+    "NEWFOLLOWER": ".activity > :nth-child(3) > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+    "CHATREQUESTS": ".messages > .parent-div-last > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+    "UNSUBSCRIBEFROMALLMAILS": ".last > .parent-div > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+    "CHANGESSAVEDMSG": "",
+    "SETTINGSTABS": "nav",
+    "ACCOUNT": "/settings/account"
+
+}
