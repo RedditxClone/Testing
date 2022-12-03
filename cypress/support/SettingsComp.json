@@ -1,6 +1,6 @@
 {
-    "URL": "https://swproject.demosfortest.com/settings",
-    "ACCOUNT": "https://swproject.demosfortest.com/settings/account",    
+    "URL": "/settings",
+    "ACCOUNT": "/settings/account",    
     "CEMAIL": "",
     "CURRENTPASS": "",
     "NEWMAIL": "",
@@ -31,7 +31,7 @@
 
 
 
-    "PROFILE": "https://swproject.demosfortest.com/settings/profile",
+    "PROFILE": "/settings/profile",
     "DISPLAYNAME": "",
     "ABOUT": "",
 
@@ -46,16 +46,16 @@
     "NSFW": "",
     "ALLOWFOLLOWERS": "",
 
-    "SAFETYANDPRIVACY": "https://swproject.demosfortest.com/settings/privacy",
+    "SAFETYANDPRIVACY": "/settings/privacy",
     "BLOCKNEWUSER": "",
     "ADD": "",
     "REMOVE": "",
 
-    "FEED": "https://swproject.demosfortest.com/settings/feed",
+    "FEED": "/settings/feed",
     "ADULTCONTENT": "",
     "AUTOPLAYMEDIA": "",
 
-    "EMAILS": "https://swproject.demosfortest.com/settings/emails",
+    "EMAILS": "/settings/emails",
     "NEWFOLLOWER": "",
     "CHATREQUESTS": "",
     "UNSUBSCRIBEFROMALLMAILS": ""

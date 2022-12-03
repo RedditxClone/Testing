@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/RedditxClone/Testing#readme",
   "dependencies": {
-    "cypress": "^11.0.0"
+    "cypress": "^11.0.0",
+    "dotenv": "^16.0.3"
   }
 }

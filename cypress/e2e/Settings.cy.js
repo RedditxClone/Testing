@@ -13,7 +13,7 @@ describe('Test Settings', function () {
 
   it('Go to About', function () {
     settingsPage.navigateAcc();
-    cy.url().should('eq', SETTINGSCOMP.ACCOUNT);
+    cy.url().should('eq', Cypress.env('baseUrl') + SETTINGSCOMP.ACCOUNT);
     
   })
 
@@ -101,7 +101,7 @@ describe('Test Settings', function () {
     loginPage.password('ay7aga123')
     //assertion --> make sure it doesn't log me in
     loginPage.submit();
-    cy.url().should('eq', LOGINCOMP.URL)
+    cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.URL)
 
     //2-wiht the new password
     loginPage.password('newpassword')
@@ -115,7 +115,7 @@ describe('Test Settings', function () {
 
   it('Change the gender', function () {
     settingsPage.navigateAcc();
-    cy.url().should('eq', SETTINGSCOMP.ACCOUNT);
+    cy.url().should('eq', Cypress.env('baseUrl') + SETTINGSCOMP.ACCOUNT);
     
   })
 
@@ -126,7 +126,7 @@ describe('Test Settings', function () {
 
   it('Go to Profile tab', function () {
     settingsPage.navigateprof()
-    cy.url().should('eq', SETTINGSCOMP.PROFILE);
+    cy.url().should('eq', Cypress.env('baseUrl') + SETTINGSCOMP.PROFILE);
     
   })
 
