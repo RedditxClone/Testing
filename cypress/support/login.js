@@ -9,14 +9,14 @@ class Login {
     cy.get(LOGINCOMP.SIGNUP).click()
   }
 
-  forgetusername(){
+  forgetUsername(){
     cy.get(LOGINCOMP.PARENTFORGET)
       .children().first()
       .click()
 
   }
 
-  forgetpassword(){
+  forgetPassword(){
     cy.get(LOGINCOMP.PARENTFORGET)
       .children().eq(1)
       .click();
@@ -40,7 +40,7 @@ class Login {
     return this
   }
 
-  clearusername()
+  clearUsername()
   {
     cy.get(LOGINCOMP.USERNAME)
       .should('exist')
@@ -49,7 +49,7 @@ class Login {
 
   }
 
-  clearpass()
+  clearPass()
   {
     cy.get(LOGINCOMP.PASSWORD)
       .clear()

@@ -8,7 +8,7 @@ class Home {
     cy.visit(HOMECOMP.URL)
   }
 
-  gotologin(){
+  goToLogin(){
     cy.get(HOMECOMP.LOGIN)
         .should('exist')
         .click();
@@ -16,7 +16,7 @@ class Home {
     cy.url().should('eq', Cypress.env('baseUrl') +  LOGINCOMP.URL);
 }
 
-  gotosignup(){
+  goToSignup(){
     cy.get(HOMECOMP.SIGNUP)
         .should('exist')
         .click();
@@ -24,7 +24,7 @@ class Home {
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 }
 
-  gotousersetting(){
+  goToUserSetting(){
     cy.get(HOMECOMP.DROPDOWNRIGHT)
         .should('exist')
         .click();
@@ -35,7 +35,7 @@ class Home {
     cy.url().should('eq', Cypress.env('baseUrl') +  SETTINGSCOMP.ACCOUNT);  
   }
 
-  comebacktohome(){
+  comeBackToHome(){
     cy.get(HOMECOMP.REDDITICON)
         .should('exist')
         .click();
@@ -44,7 +44,7 @@ class Home {
     cy.url().should('eq', Cypress.env('baseUrl') +  HOMECOMP.URL);
   }
 
-  openclosecommwindow(){
+  openCloseCommWindow(){
     cy.get(HOMECOMP.DROPDOWNRIGHT)
         .should('exist')
         .click();
@@ -59,7 +59,7 @@ class Home {
         .should('not.exist'); 
   }
 
-  opencancelcommwindow(){
+  openCancelCommWindow(){
     cy.get(HOMECOMP.DROPDOWNRIGHT)
         .should('exist')
         .click();
@@ -74,7 +74,7 @@ class Home {
         .should('not.exist'); 
   }
 
-  createcommunity(name, type, adult){   //type:  0 -->
+  createCommunity(name, type, adult){   //type:  0 -->
     cy.get(HOMECOMP.DROPDOWNRIGHT)
         .should('exist')
         .click();
@@ -99,7 +99,7 @@ class Home {
     
     
   }
-  asertioncreatecommunity(name){
+  asertionCreateCommunity(name){
     //assertions  --> 1-Form is no longer exist
     //2-url is the community url  
     //3-if for adult (then there will be a pop up window to ask about my age)
@@ -110,7 +110,7 @@ class Home {
   }
 
 
-  changestatus(){
+  changeStatus(){
     cy.get(UserHomeComp.DROPDOWNRIGHT)
         .should('exist')
         .click();
@@ -126,12 +126,12 @@ class Home {
         .click();
   }
 
-  createpostbyicon(){
+  createPostByIcon(){
     
 
   }
 
-  followuser(user){
+  followUser(user){
     //search the user in the search bar
     cy.get(USERHOMECOMP.SEARCH)
         .should('exist')

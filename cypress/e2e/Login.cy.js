@@ -1,7 +1,6 @@
 import Login from '../support/login'
 import LOGINCOMP from '../support/login-comp.json'
 import SIGNUPCOMP from '../support/signup-comp.json'
-import HOMECOMP from '../support/home-comp.json'
 
 
 describe('Test login', function () {
@@ -19,7 +18,7 @@ describe('Test login', function () {
   })
 
   it('Go to forget username page then come back again', function () {
-    loginPage.forgetusername();
+    loginPage.forgetUsername();
     
     // assertion
     cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.FORGETUSERNAMEURL);
@@ -29,7 +28,7 @@ describe('Test login', function () {
 
 
   it('Go to forget password page then come back again', function () {
-    loginPage.forgetpassword();
+    loginPage.forgetPassword();
     
     // assertion
     cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.FORGETPASSWORDURL);
@@ -43,7 +42,7 @@ describe('Test login', function () {
 
   it('Login with valid username and empty password', function () {
     loginPage.username('doaamagdy'); // TODO --> create it later
-    loginPage.clearpass();
+    loginPage.clearPass();
     // assertion
     cy.get(LOGINCOMP.LOGIN).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.URL)
@@ -51,7 +50,7 @@ describe('Test login', function () {
 
   it('Login with empty username and valid password', function () {
     loginPage.password('9876543210'); // TODO --> create it later
-    loginPage.clearusername();
+    loginPage.clearUsername();
     // assertion
     cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.URL)
   })
