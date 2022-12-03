@@ -1,0 +1,19 @@
+{
+    "URL": "/settings/account",
+    
+
+    "PROFILE": "/settings/profile",
+
+    "SAFETYANDPRIVACY": "/settings/privacy",
+    "BLOCKNEWUSER": "#filled-basic",
+    "ADD": ".text-btn > .MuiButtonBase-root",
+    "REMOVE": "",
+    "BLOCKEDLIST": "",
+    "BLOCKEDMESSAGE": "",
+    "UNBOLCKEDMESSAGE": "",
+    "BLOCKAGAINERRORMESG": ""
+
+    
+
+}
+
