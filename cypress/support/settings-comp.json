@@ -1,12 +1,15 @@
 {
-    "URL": "/settings",
+    "URL": "/settings/account",
     "ACCOUNT": "/settings/account",    
-    "CEMAIL": "",
+    "CEMAIL": ":nth-child(2) > .cont > .MuiButtonBase-root",
+    "CEMAILERRORMESSAGE": "",
     "CURRENTPASS": "",
     "NEWMAIL": "",
     "SAVEEMIAL": "",
     "CURRENTMAIL": "",
     "CLOSEUPDATEMAIL": "",
+
+    "CHANGEDSAVEDMESSAGE": "",
     
     "CPASS": "",
     "OLDPASS": "",
@@ -17,7 +20,7 @@
     "CGENDER": "",
     "NEWGENDER": "",
 
-    "CCOUNTRY": "",
+    "CCOUNTRY": "#countries",
 
     "DELETEACCOUNT": "",
     "USERNAMEDELETE": "",

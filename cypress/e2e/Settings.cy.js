@@ -11,78 +11,64 @@ describe('Test Settings', function () {
   const homePage = new Home()
   const loginPage = new Login()
 
-  it('Go to About', function () {
+  it('Go to Account tab', function () {
     settingsPage.navigateAcc();
     cy.url().should('eq', Cypress.env('baseUrl') + SETTINGSCOMP.ACCOUNT);
     
   })
 
   it('Change the email (ideal case)', function () {
-    settingsPage.changemail('ay7aga123', 'newmail@gmail.com')
+    settingsPage.changemail('doaamagdypassword', 'newmail@gmail.com')
     settingsPage.savenewmail();
 
-    //assertion  --> make sure the email have changed
-    cy.get(SETTINGSCOMP.CURRENTMAIL)
-    .should('eq', newmail);
-    //or .contains(newmail)
+    //assertion  --> make sure the email have changed   -- wrong (no assertions can be done here (as there will be verification email sent first))
+    // cy.get(SETTINGSCOMP.CURRENTMAIL)
+    // .should('eq', newmail);
+    //or .contains(newmail);
 
   })
 
-  it('Change the email with invalid mail', function () {
-    settingsPage.changemail('ay7aga123', 'abcd')
+  it('Change the email with invalid mail and the correct password', function () {
+    settingsPage.changemail('doaamagdypassword', 'abcd')
     settingsPage.savenewmail();
 
-    //assertion
-    
-    cy.get(SETTINGSCOMP.CURRENTMAIL).contains('newmail@gmail.com');
+    //assertions
+    cy.get(SETTINGSCOMP.SAVEEMIAL).should('be.disabled')
+    cy.get(SETTINGSCOMP.CEMAILERRORMESSAGE).contains('You entered the current email address. Please enter a different one to proceed.')
+    //cy.get(SETTINGSCOMP.CURRENTMAIL).contains('newmail@gmail.com');
+
+    settingsPage.closeupdatemail();
     
   })
 
 
-  it('Change the email with wrong password', function () {
+  //to delete this test case 
+  it('Change the email with wrong password and correct new mail', function () {
     settingsPage.changemail('wrongpass', 'doaa@gmail.com')
     settingsPage.savenewmail();
 
-    //assertion
-    cy.get(SETTINGSCOMP.CURRENTMAIL).contains('newmail@gmail.com');
-    
   })
 
   it('Change the email with empty password to make sure the button is disabled', function () {
-    cy.get(SETTINGSCOMP.CEMAIL)
-        .should('exist')
-        .click();
-
-    cy.get(SETTINGSCOMP.NEWMAIL)
-        .should('exist')
-        .clear()
-        .type('doaa@gmail.com');
+    settingsPage.changemail(' ', 'doaa@gmail.com')
 
     //assertion
     cy.get(SETTINGSCOMP.SAVEEMIAL)
       .should('be.disabled');
 
     settingsPage.closeupdatemail();
-    cy.get(SETTINGSCOMP.CURRENTMAIL).contains('newmail@gmail.com');
     
   })
 
   it('Change the email with empty mail to make sure the button is disabled', function () {
-    //I won't use the func here as we can't pass to it empty string ''
-    cy.get(SETTINGSCOMP.CEMAIL)
-        .should('exist')
-        .click();
-    cy.get(SETTINGSCOMP.CURRENTPASS)
-        .should('exist')
-        .clear()
-        .type('ay7aga');
-
+    settingsPage.changemail('doaamagdypassword', ' ')
+  
     //assertion
     cy.get(SETTINGSCOMP.SAVEEMIAL)
       .should('be.disabled');
 
     settingsPage.closeupdatemail();
-    cy.get(SETTINGSCOMP.CURRENTMAIL).contains('newmail@gmail.com');
+    
     
   })
 
@@ -92,31 +78,50 @@ describe('Test Settings', function () {
 
 //TODO --> try change password (but it is not exist in the UI)
 
-  it('Log out and try to enter by the old then the new password', function () {
-    homePage.logout();
-    homePage.gotologin();
-    loginPage.username('ay7aga')
+  // it('Log out and try to enter by the old then the new password', function () {
+  //   homePage.logout();
+  //   homePage.gotologin();
+  //   loginPage.username('ay7aga')
 
-    //1-with old password
-    loginPage.password('ay7aga123')
-    //assertion --> make sure it doesn't log me in
-    loginPage.submit();
-    cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.URL)
+  //   //1-with old password
+  //   loginPage.password('ay7aga123')
+  //   //assertion --> make sure it doesn't log me in
+  //   loginPage.submit();
+  //   cy.url().should('eq', Cypress.env('baseUrl') + LOGINCOMP.URL)
 
-    //2-wiht the new password
-    loginPage.password('newpassword')
-    loginPage.submit();
-    //assertion
-    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
+  //   //2-wiht the new password
+  //   loginPage.password('newpassword')
+  //   loginPage.submit();
+  //   //assertion
+  //   cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
-  })
+  // })
 
-  
+  /////////////// gender
 
   it('Change the gender', function () {
     settingsPage.navigateAcc();
     cy.url().should('eq', Cypress.env('baseUrl') + SETTINGSCOMP.ACCOUNT);
-    
+
+    settingsPage.changegender('Woman');
+    //assertions
+    cy.get(SETTINGSCOMP.CHANGEDSAVEDMESSAGE).contains('Changes saved');
+    settingsPage.navigateprof();
+    settingsPage.navigateAcc();
+    cy.get(SETTINGSCOMP.CGENDER).contains('Woman');
+  })
+
+
+  it('Change the country', function (){
+    //settingsPage.navigateAcc();
+    settingsPage.changecountry('Ecuador');
+
+    //assertions
+    cy.get(SETTINGSCOMP.CHANGEDSAVEDMESSAGE).contains('Changes saved');
+    settingsPage.navigateprof();
+    settingsPage.navigateAcc();
+    cy.get(SETTINGSCOMP.CCOUNTRY).contains(newcountry);
+      
   })
 
 

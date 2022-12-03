@@ -15,18 +15,19 @@ class Settings {
     cy.get(SETTINGSCOMP.CEMAIL)
         .should('exist')
         .click();
-    cy.get(SETTINGSCOMP.CURRENTPASS)
-        .should('exist')
-        .clear()
-        .type(currentpass);
-    cy.get(SETTINGSCOMP.NEWMAIL)
-        .should('exist')
-        .clear()
-        .type(newmail);
+    if(currentpass != ' ')
+      cy.get(SETTINGSCOMP.CURRENTPASS)
+          .should('exist')
+          .clear()
+          .type(currentpass);
+    if(newmail != ' ')
+      cy.get(SETTINGSCOMP.NEWMAIL)
+          .should('exist')
+          .clear()
+          .type(newmail);
     
 
-
-    return this
+    return this;
 
   }
 
@@ -78,11 +79,11 @@ class Settings {
   }
 
   changecountry(newcountry){
-    cy.get(SETTINGSCOMP.CCOUNTRY).select(newcountry);
+    cy.get(SETTINGSCOMP.CCOUNTRY).select(newcountry).invoke("val").should("eq", newcountry);
     //assertion
-    cy.get(SETTINGSCOMP.CCOUNTRY)
-        .invoke("text")
-        .should('eq', newcountry);
+    cy.get(SETTINGSCOMP.CCOUNTRY).contains(newcountry);
+        //.invoke("text")
+        //.should('eq', newcountry);
     return this;
   }
 
@@ -273,6 +274,8 @@ class Settings {
       .click();
   }
 
-  enabledisableunsubscribefromallmails()
+  enabledisableunsubscribefromallmails(){
+
+  }
 }
 export default Settings
