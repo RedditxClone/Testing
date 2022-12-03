@@ -8,13 +8,12 @@
     "LOGIN": ".MuiButtonBase-root",
     "SIGNUP": "#BottomLink",
     "USERNAMESIGNED": ".MuiTypography-root MuiTypography-body1 css-4h8jt1",
-    "SIGNUPURL": "https://www.reddit.com/account/register/",
+    "SIGNUPURL": "/auth/signup",
 
     "PARENTFORGET": "#forget",
-    "FORGETUSERNAME": "",
-    "FORGETPASSWORD": "",
-    "FORGETUSERNAMEURL": "https://swproject.demosfortest.com/auth/forgetuname",
-    "FORGETPASSWORDURL": "https://swproject.demosfortest.com/auth/forgetupassword" 
+    
+    "FORGETUSERNAMEURL": "/auth/forgetuname",
+    "FORGETPASSWORDURL": "/auth/forgetupassword" 
 }
 
 

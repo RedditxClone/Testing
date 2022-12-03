@@ -40,6 +40,23 @@ class Login {
     return this
   }
 
+  clearusername()
+  {
+    cy.get(LOGINCOMP.USERNAME)
+      .should('exist')
+      .clear()
+    return this
+
+  }
+
+  clearpass()
+  {
+    cy.get(LOGINCOMP.PASSWORD)
+      .clear()
+    return this
+
+  }
+
   submit () {
     cy.get(LOGINCOMP.LOGIN).click()
   }
