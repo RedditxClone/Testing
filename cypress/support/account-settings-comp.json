@@ -1,0 +1,36 @@
+{
+    "URL": "/settings/account",
+    "ACCOUNT": "/settings/account",    
+    "CEMAIL": ":nth-child(2) > .cont > .MuiButtonBase-root",
+    "CEMAILERRORMESSAGE": "",
+    "CURRENTPASS": "",
+    "NEWMAIL": "",
+    "SAVEEMIAL": "",
+    "CURRENTMAIL": "",
+    "CLOSEUPDATEMAIL": "",
+
+    "CLOSECEMAIL": ".icon-1",
+
+    "CHANGEDSAVEDMESSAGE": "",
+    
+    "CPASS": "",
+    "OLDPASS": "",
+    "NEWPASS": "",
+    "CONFIRMNEWPASS": "",
+    "SAVENEWPASS": "",
+
+    "CGENDER": "",
+    "NEWGENDER": "",
+
+    "CCOUNTRY": "#countries",
+
+    "DELETEACCOUNT": ".del > .MuiButtonBase-root",
+    "USERNAMEDELETE": "",
+    "PASSWORDDELETE": "",
+    "IUNDERSTAND": "",
+    "DELETE": "",
+    "CANCELDELETE": "",
+
+    "CONNECTTO": "",
+    "PROFILE": "/settings/profile"
+}
