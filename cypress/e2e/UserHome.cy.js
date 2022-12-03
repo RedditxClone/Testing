@@ -1,10 +1,10 @@
-import Home from '../support/home'
-import HOMECOMP from '../support/HomeComp.json'
+import UserHome from '../support/userhome'
+import USERHOMECOMP from '../support/UserHomeComp.json'
 import Login from '../support/login'
 
-describe('Test Home', function () {
+describe('Test UserHome', function () {
   const loginPage = new Login()
-  const homePage = new Home()
+  const homePage = new UserHome()
 
 
   it('Go to Signup page', function () {
@@ -15,15 +15,14 @@ describe('Test Home', function () {
   })
   
   it('Go to login page and login', function () {
-    //homePage.navigate();
     homePage.gotologin();
     //login with a known user
-    loginPage.username('doaamagdy');
-    loginPage.password('doaamagdypassword');
+    loginPage.username('ay7aga');
+    loginPage.password('ay7aga123');
     loginPage.submit();
 
     //assertion
-    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('doaamagdy');
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
   })
 
@@ -35,7 +34,7 @@ describe('Test Home', function () {
   
   it('Go to user settings page then come back to home', function () {
     homePage.gotousersetting();
-    //homePage.comebacktohome();
+    homePage.comebacktohome();
 
     //I will back due to the bug here --> the user setting cover the icon (bug) to be able to complete the script
     cy.go('back');
@@ -52,12 +51,12 @@ describe('Test Home', function () {
   it('Go to login page and login', function () {
     homePage.gotologin();
     //login with a known user
-    loginPage.username('doaamagdy');
-    loginPage.password('doaamagdypassword');
+    loginPage.username('ay7aga');
+    loginPage.password('ay7aga123');
     loginPage.submit();
 
     //assertion
-    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('doaamagdy');
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
   })
 
@@ -72,18 +71,18 @@ describe('Test Home', function () {
   it('Go to login page and login', function () {
     homePage.gotologin();
     //login with a known user
-    loginPage.username('doaamagdy');
-    loginPage.password('doaamagdypassword');
+    loginPage.username('ay7aga');
+    loginPage.password('ay7aga123');
     loginPage.submit();
 
     //assertion
-    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('doaamagdy');
+    cy.get(HOMECOMP.DROPDOWNRIGHT).contains('ay7aga');
     
   })
 
 
   it('test create community', function () {
-    homePage.createcommunity('doaa', 'Public', false);
+    homePage.createcommunity('doaa', 1, false);
     homePage.asertioncreatecommunity('doaa');
     
     
@@ -91,7 +90,7 @@ describe('Test Home', function () {
 
 
   it('test create community with empty name', function () {
-    homePage.createcommunity('', 'Public', false);
+    homePage.createcommunity('', 1, false);
     cy.get(HOMECOMP.COMMUNITYERROR).contains('A community name is required')
     //cancel this form
     cy.get(HOMECOMP.CLOSECOMMFORM)
@@ -103,7 +102,7 @@ describe('Test Home', function () {
   })
 
   it('test create another community with the same name', function () {
-    homePage.createcommunity('doaa', 'Public', false);
+    homePage.createcommunity('doaa', 1, false);
     //assertion --> check for the error message that appears
     cy.get(HOMECOMP.COMMUNITYERROR).contains('Sorry, r/doaa is taken. Try another.')
     //cancel this form
@@ -114,9 +113,9 @@ describe('Test Home', function () {
   })
 
   it('test create another 2 communities which is wrong (as we have to wait for 10 min) ', function () {
-    homePage.createcommunity('software', 'Public', false);
+    homePage.createcommunity('software', 1, false);
     homePage.asertioncreatecommunity('software');
-    homePage.createcommunity('arch', 'Public', false);
+    homePage.createcommunity('arch', 1, false);
     //assertion --> check for the error message that appears
     cy.get(HOMECOMP.COMMUNITYERRORCREATETRIPLE).contains('Phew, looks like');
     //cancel this form
@@ -127,6 +126,7 @@ describe('Test Home', function () {
   })
 
 
+  
   it('follow a user and make sure he get notified ', function () {
     homePage.followuser('u/doaa')
     
@@ -142,19 +142,9 @@ describe('Test Home', function () {
     cy.get(HOMECOMP.DROPDOWNRIGHT).contains('doaa');
     
     //make sure doaa get notified by this follow action
-    cy.get(HOMECOMP.NOTIFICATIONICON)
-      .should('exist')
-      .click();
-    
-    cy.get(HOMECOMP.NOTIFICATIONLIST)
-      .contains('New follower!');
-    
+    cy.get(USERHOMECOM)
+
   })
-
-
-
-
-
 
 
 
