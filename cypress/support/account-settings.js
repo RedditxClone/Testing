@@ -12,7 +12,7 @@ class AccSettings {
   }
 
   //not completed yet
-  changemail(currentpass, newmail){
+  changEmail(currentpass, newmail){
     cy.get(ACCSETTINGSCOMP.CEMAIL)
         .should('exist')
         .click();
@@ -32,20 +32,20 @@ class AccSettings {
 
   }
 
-  savenewmail(){
+  saveNewMail(){
     cy.get(ACCSETTINGSCOMP.SAVEEMIAL)
       .should('be.enabled')
       .click();
   }
 
-  closeupdatemail(){
+  closeUpdatEmail(){
     cy.get(ACCSETTINGSCOMP.CLOSECEMAIL)
       .should('exist')
       .click();
   }
 
   //not supported by the front yet
-  changepass(oldpass, newpass){
+  changePass(oldpass, newpass){
     cy.get(ACCSETTINGSCOMP.CPASS)
         .should('exist')
         .click();
@@ -67,7 +67,7 @@ class AccSettings {
 
   // it is not accepted to include this in our app :(
   //TODO LATER  --> make sure of it
-  changegender(newgender){
+  changeGender(newgender){
     cy.get(ACCSETTINGSCOMP.CGENDER)
         .should('exist')
         .select(newgender);
@@ -79,7 +79,7 @@ class AccSettings {
 
   }
 
-  changecountry(newcountry){
+  changeCountry(newcountry){
     cy.get(ACCSETTINGSCOMP.CCOUNTRY).select(newcountry).invoke("val").should("eq", newcountry);
     //assertion
     cy.get(ACCSETTINGSCOMP.CCOUNTRY).contains(newcountry);
@@ -88,7 +88,7 @@ class AccSettings {
     return this;
   }
 
-  deleteaccount(username, password){
+  deleteAccount(username, password){
     cy.get(ACCSETTINGSCOMP.DELETEACCOUNT)
         .should('exist')
         .click();
@@ -113,8 +113,9 @@ class AccSettings {
     //TODO asssertion --> make sure the account is deleted by checking the url
 
   }
-  navigateprof() {
-    cy.visit(ACCSETTINGSCOMP.PROFILE)
+  navigateProf() {
+    cy.get(ACCSETTINGSCOMP.SETTINGSTABS).children().eq(1).click();
+    //cy.visit(ACCSETTINGSCOMP.PROFILE)
   }
 
 }

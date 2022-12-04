@@ -111,52 +111,71 @@ class Home {
 
 
   changeStatus(){
-    cy.get(UserHomeComp.DROPDOWNRIGHT)
+    cy.get(HOMECOMP.DROPDOWNRIGHT)
         .should('exist')
         .click();
     //default --> true
-    cy.get(UserHomeComp.ONLINESTATUS)
+    cy.get(HOMECOMP.ONLINESTATUS)
         .should('exist')
         .should('have.attr', 'aria-checked', 'true')
         .click();
     //check that it have been changed 
-    cy.get(UserHomeComp.ONLINESTATUS)
+    cy.get(HOMECOMP.ONLINESTATUS)
         .should('exist')
         .should('have.attr', 'aria-checked', 'false')
         .click();
   }
 
-  createPostByIcon(){
+  createPostByIcon(tittle, text, community){
+    cy.get(HOMECOMP.CREATEPOSTICON)
+        .should('exist')
+        .click();
     
+    if(tittle != ' ')
+        cy.get(HOMECOMP.POSTTITTLE)
+            .should('exist')
+            .click()
+            .clear()
+            .type(tittle);
+    cy.get(HOMECOMP.POSTTEXT)
+        .should('exist')
+        .click()
+        .clear()
+        .type(text);
+    cy.get(HOMECOMP.CHOOSECOMMUNITY)
+        .should('exist')
+        .select(community).invoke("val").should("eq", community);
 
+    return this;
+    
   }
 
   followUser(user){
     //search the user in the search bar
-    cy.get(USERHOMECOMP.SEARCH)
+    cy.get(HOMECOMP.SEARCH)
         .should('exist')
         .click()
         .clear()
         .type(user)
         .type('{enter}');
 
-    cy.get(USERHOMECOMP.SEARCHPEOPLE)
+    cy.get(HOMECOMP.SEARCHPEOPLE)
         .should('exist')
         .click();
     
     //can make assertion here --> to check that the url changed so that type=user
 
-    cy.get(USERHOMECOMP.FOLLOW)
+    cy.get(HOMECOMP.FOLLOW)
         .should('exist')
         .click();
 
     //make sure the button turned to following 
-    cy.get(USERHOMECOMP.FOLLOW)
+    cy.get(HOMECOMP.FOLLOW)
         .should('exist')
         .contains('Following');
 
     //and if i hover with the mouse then it will turn to unfollow
-    cy.get(USERHOMECOMP.FOLLOW)
+    cy.get(HOMECOMP.FOLLOW)
         .should('exist')
         .trigger('mouseover')
         .contains('Unfollow');

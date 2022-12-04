@@ -3,7 +3,14 @@
     "ONLINESTATUS": ".MuiList-root > :nth-child(2) > .MuiIconButton-root",
     "NOTIFICATIONICON": ".css-v2908d",
     "NOTIFICATIONLIST": "",
+
     "CREATEPOSTICON": ".css-4kgmd3 > :nth-child(3)",
+    "POSTTITTLE": "",
+    "POSTTEXT": "",
+    "POST": "",
+    "SAVEDRAFT": "",
+    "CHOOSECOMMUNITY": "",
+
     "POPULARICON": ".css-4kgmd3 > :nth-child(3)",
     "SEARCH": "",
 
@@ -17,7 +24,7 @@
     "USERNAME": "MuiTypography-root MuiTypography-body1 css-4h8jt1",
     "LOGIN": ".css-ii2a4u > .MuiButtonBase-root",
     "SIGNUP": ".css-13ej8f4 > .MuiButtonBase-root",
-    "DROPDOWNRIGHT": ".css-1nxj3g4",
+    "DROPDOWNRIGHT": ".MuiSelect-select",
     "LOGOUT": ":nth-child(12) > .MuiButtonBase-root",
     "USERSETTINGS": ".MuiList-root > :nth-child(4) > .MuiButtonBase-root",
     "NAVBAR": ".MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-qa6kb0",

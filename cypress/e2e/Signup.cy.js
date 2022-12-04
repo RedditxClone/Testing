@@ -20,7 +20,7 @@ describe('Test Signup', function () {
 
   // /////////////////////////////// Sign up with email /////////////////////////
   it('signup with already exist email', function () {
-    signupPage.email('ay7aga@gmail.com');
+    signupPage.email('doaa.magdy2001@gmail.com');
     signupPage.continue()
     // assertion
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
@@ -120,8 +120,8 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL)
     
-    signupPage.back();
-    signupPage.continue();
+    //signupPage.back();
+    //signupPage.continue();
     cy.reload();
   })
 
@@ -136,12 +136,12 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
-    signupPage.back();
-    signupPage.continue();
+    //signupPage.back();
+    //signupPage.continue();
     cy.reload();
   })
 
-  it('sign up with username less greater than 2 and invalid pass (less than 9)', function () {
+  it('sign up with username greater than 2 and invalid pass (less than 9)', function () {
     signupPage.username('123');  //
     signupPage.password('123456789');
     
@@ -152,27 +152,12 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
-    signupPage.back();
-    signupPage.continue();
+    //signupPage.back();
+    //signupPage.continue();
     cy.reload();
   })
   
-  it('signup with repeated (invalid) username and valid password', function () {
-    //invalid (repeated) username and valid pass
-    signupPage.username('doaamagdy');  // TODO make an account with this uername to be considered as repeated
-    signupPage.password('valid123');
-    // TODO  --> check for the textbox to be turned into red and check for the message written below it
-    //assertions
-    cy.get(SIGNUPCOMP.USERNAMERULE).contains('That username is already taken');
-    //cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
-    cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
-    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
-    signupPage.back();
-    signupPage.continue();
-    cy.reload();
-
-  })
 
 
   it('signup with valid (unique) username and repeated pass', function () {
@@ -187,11 +172,31 @@ describe('Test Signup', function () {
     cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
 
-    signupPage.back();
-    signupPage.continue();
-    cy.reload();
+     // signupPage.back();
+    // signupPage.continue();
+     cy.reload();
 
   })
+
+
+
+
+  // it('signup with repeated (invalid) username and valid password', function () {
+  //   //invalid (repeated) username and valid pass
+  //   signupPage.username('doaamagdy');  // TODO make an account with this uername to be considered as repeated
+  //   signupPage.password('valid123');
+  //   // TODO  --> check for the textbox to be turned into red and check for the message written below it
+  //   //assertions
+  //   cy.get(SIGNUPCOMP.USERNAMERULE).contains('That username is already taken');
+  //   //cy.get(SIGNUPCOMP.INVALIDPASS).should('not.exist');
+  //   cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
+  //   cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
+
+  //   //signupPage.back();
+  //   //signupPage.continue();
+  //   cy.reload();
+
+  // })
 
 
   it('valid (unique) username and invalid (less than 8 char) pass', function () {
@@ -208,6 +213,26 @@ describe('Test Signup', function () {
 
     
 
+    cy.reload();
+  })
+
+
+  it('signup with repeated (invalid) username and valid pass', function () {
+    //invalid (repeated) username and valid pass
+    signupPage.username('doaamagdy');  // TODO make an account with this uername to be considered as repeated
+    signupPage.password('doaamagdypassword');
+    // TODO  --> check for the textbox to be turned into red and check for the message written below it
+    //assertions
+    cy.get(SIGNUPCOMP.USERNAMERULE).contains('That username is already taken');
+    //cy.get(SIGNUPCOMP.INVALIDPASS).contains('Invalid Password');
+    //cy.contains('Invalid Password');
+    cy.get(SIGNUPCOMP.SIGNUP).should('be.disabled');
+    cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.CONTINUEURL);
+
+     // signupPage.back();
+    // signupPage.continue();
+    // cy.reload();
+
   })
 
   it('check the back button', function () {
@@ -215,10 +240,11 @@ describe('Test Signup', function () {
     //assertion
     cy.url().should('eq', Cypress.env('baseUrl') +  SIGNUPCOMP.URL);
 
+
   })
 
   it('signup with valid email & valid uesrname & valid password & recaptcha expiration check', function () {
-    //signupPage.navigate();
+    signupPage.navigate();
     signupPage.email('doaa@gmail.com');
     signupPage.continue();
     signupPage.username('doaamagdyibrahim');  // TODO make an account with this uername to be considered as repeated

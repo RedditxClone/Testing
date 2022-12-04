@@ -3,14 +3,14 @@ import SPSETTINGSCOMP from './safety-privacy-settings-comp.json'
 class SPSettings {
   //////// safety & privacy
 
-  navigatesafetyprivacy(){
+  navigateSafetyPrivacy(){
     cy.get(SPSETTINGSCOMP.SETTINGSTABS).children().eq(2).click();
     //cy.visit(SPSETTINGSCOMP.SAFETYANDPRIVACY);
 
   }
 
 
-  blocknewuser(username){
+  blockNewUser(username){
     cy.get(SPSETTINGSCOMP.BLOCKNEWUSER)
         .should('exist')
         .clear()
@@ -22,13 +22,13 @@ class SPSettings {
   }
 
 
-  removeblockeduser(username){
+  removeBlockedUser(username){
     cy.get(SPSETTINGSCOMP.BLOCKEDLIST).first().find('Remove').click();
 
   }
 
 
-  navigateprof() {
+  navigateProf() {
     cy.get(SPSETTINGSCOMP.SETTINGSTABS).children().eq(1).click();
     //cy.visit(SPSETTINGSCOMP.PROFILE)
   }

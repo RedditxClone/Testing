@@ -1,0 +1,24 @@
+{
+    "PROFILE": "/settings/profile",
+    "DISPLAYNAME": ".input-1",
+    "ABOUT": ".input-2",
+
+    "ADDSOCIALLINKES": ".MuiBox-root > .MuiButtonBase-root",
+    "CHOOSELINK": ".contain-2",
+    "TYPELINK": ".inp1",
+    "DISPLAYTEXT": ".inp1",
+    "SAVELINK": ".icon-1 > .MuiButtonBase-root",
+    "LINKSLIST": "",
+    "REMOVELINK": "",
+
+    "PROFILEPIC": ".div-2",
+    "BANNER": ".div-1",
+    "NSFW": ".profile-category > .parent-div > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+    "IUNDERSTAND": ".buttons > :nth-child(2) > .MuiButtonBase-root",
+    "ALLOWFOLLOWERS": ".parent-div-1 > .child-b > .MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input",
+
+    "CHANGESSAVEDMSG": "",
+    
+    "SETTINGSTABS": "nav"
+}
+
