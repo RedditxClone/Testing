@@ -1,5 +1,4 @@
 import HOMECOMP from './home-comp.json'
-import SETTINGSCOMP from './settings-comp.json'
 import LOGINCOMP from './login-comp.json'
 import SIGNUPCOMP from './signup-comp.json'
 
@@ -32,7 +31,7 @@ class Home {
         .should('exist')
         .click();
     //assertion
-    cy.url().should('eq', Cypress.env('baseUrl') +  SETTINGSCOMP.ACCOUNT);  
+    cy.url().should('eq', Cypress.env('baseUrl') +  HOMECOMP.USERSETTINGSURL);  
   }
 
   comeBackToHome(){
@@ -55,14 +54,14 @@ class Home {
         .should('exist')
         .click();
     //assertion --> make sure the comm form is closed
-    cy.get(HOMECOMP.COMMFORM)
-        .should('not.exist'); 
+    //cy.get(HOMECOMP.COMMFORM)
+      //  .should('not.exist'); 
   }
 
   openCancelCommWindow(){
-    cy.get(HOMECOMP.DROPDOWNRIGHT)
-        .should('exist')
-        .click();
+    //cy.get(HOMECOMP.DROPDOWNRIGHT)
+      //  .should('exist')
+        //.click();
     cy.get(HOMECOMP.CREATECOMM)
         .should('exist')
         .click();
@@ -74,40 +73,7 @@ class Home {
         .should('not.exist'); 
   }
 
-  createCommunity(name, type, adult){   //type:  0 -->
-    cy.get(HOMECOMP.DROPDOWNRIGHT)
-        .should('exist')
-        .click();
-    cy.get(HOMECOMP.CREATECOMM)
-        .should('exist')
-        .click();
-    cy.get(HOMECOMP.COMMNAME)
-        .should('exist')
-        .clear()
-        .type(name);
-    
-    cy.get(HOMECOMP.COMMTYPE)
-        .should('exist')
-        .contains(type).click();
-    if(adult)
-        cy.get(HOMECOMP.ADULTCONTENT)
-            .should('exist')
-            .click();
-    cy.get(HOMECOMP.CREATEBUTTON)
-        .should('exist')
-        .click();
-    
-    
-  }
-  asertionCreateCommunity(name){
-    //assertions  --> 1-Form is no longer exist
-    //2-url is the community url  
-    //3-if for adult (then there will be a pop up window to ask about my age)
-    cy.get(HOMECOMP.COMMFORM)
-        .should('not.exist'); 
-    cy.url().should('eq', Cypress.env('baseUrl') +  HOMECOMP.URL + "/r/" + name + "/")
 
-  }
 
 
   changeStatus(){
@@ -181,6 +147,55 @@ class Home {
         .contains('Unfollow');
 
     //follow him
+  }
+
+  pressSideDrawerButton(){
+    cy.get(HOMECOMP.DROPDOWNLEFT)
+        .click()
+    cy.get('[data-testid="sidedrawerbutton"]')
+        .click()
+
+    //assertion
+    cy.get(HOMECOMP.LEFTDYNAMICMENUE)
+        .should('exist')
+  }
+
+  cancelDynWind(){
+    cy.get(HOMECOMP.CANCELDYNAMICMENUE)
+        .click()
+  }
+
+  goToPostDyn(){
+    cy.get(HOMECOMP.DYNWINCREATEPOST)
+        .click();
+
+    //assertion
+    cy.url().should('eq', Cypress.env('baseUrl') +  "/submit")
+
+  }
+
+  openCommFormDyn(){
+    cy.get(HOMECOMP.DYNWINCREATECOMM)
+        .click()
+    
+    cy.get(HOMECOMP.COMMFORM)
+    .should('exist'); 
+
+    //then close it
+    cy.get(HOMECOMP.CANCELCREATECOMM)
+    .should('exist')
+    .click();
+    //assertion --> make sure the comm form is closed
+    cy.get(HOMECOMP.COMMFORM)
+        .should('not.exist'); 
+
+  }
+
+
+  goToHomeDyn(){
+    cy.get(HOMECOMP.DYNWINHOME)
+        .click()
+
   }
 
   logout(){

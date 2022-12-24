@@ -2,6 +2,8 @@ import AccSettings from '../support/account-settings'
 import ACCSETTINGSCOMP from '../support/account-settings-comp.json'
 import Home from '../support/home'
 import Login from '../support/login'
+import LOGINCOMP from '../support/login-comp.json'
+
 
 
 describe('Test Account Settings', function () {
@@ -9,16 +11,62 @@ describe('Test Account Settings', function () {
   const homePage = new Home()
   const loginPage = new Login()
 
-  it('login then go to Account tab', function () {
-    loginPage.navigate();
-    loginPage.username('doaamagdy');
-    loginPage.password('doaamagdypassword');
-    loginPage.submit();
+  it('Go to login page and login as a user', function () {
+    loginPage.navigate()
+
+  
+      
+    cy.get(LOGINCOMP.USERNAME)
+    .type('doaamagdy')
+
+    cy.get(LOGINCOMP.PASSWORD)
+    .type('doaamagdypassword')
+
+    loginPage.submit()
+
+
+
+  })
+
+
+
+  it('Go to login page and login as a user', function () {
+
+      cy.get(LOGINCOMP.USERNAME)
+      .clear()
+      .type('doaamagdy')
+
+      cy.get(LOGINCOMP.PASSWORD)
+      .clear()
+      .type('doaamagdypassword')
+
+      cy.get(LOGINCOMP.USERNAME)
+      .clear()
+      .type('doaamagdy')
+
+      cy.get(LOGINCOMP.PASSWORD)
+      .clear()
+      .type('doaamagdypassword')
+
+ 
+    //   loginPage.username('doaamagdy')
+    //   loginPage.password('doaamagdypassword')
+      // assertion
+      cy.get(LOGINCOMP.LOGIN).click()
+      
+      loginPage.submit()
+      //assertion
+      cy.contains('doaamagdy');
+
+    })
+
+
+  it('go to Account tab', function () {
+
     homePage.goToUserSetting();
     //cy.url().should('eq', Cypress.env('baseUrl') + ACCSETTINGSCOMP.ACCOUNT);
     
   })
-
 
   it('Change the country', function (){
     settingsPage.changeCountry('Ecuador');

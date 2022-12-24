@@ -1,0 +1,25 @@
+{
+    "DROPDOWNRIGHT": ".MuiSelect-select",
+    "CREATECOMM": ".MuiList-root > :nth-child(9)",
+    "COMMNAME": ".css-12yrtac",
+    "COMMTYPE": ".css-8ndowl > .MuiPaper-root > .MuiCardContent-root > :nth-child(2)",
+    "ADULTCONTENT": ".MuiFormGroup-root css-1h7anqn",
+    "CANCELCREATECOMM": ".MuiCardActions-root > .MuiButton-outlined",
+    "CREATEBUTTON": ".MuiCardActions-root > .MuiButton-contained",
+    "CLOSECOMMFORM": ".MuiCardHeader-action > .MuiButtonBase-root",
+    "COMMFORM": ".css-8ndowl > .MuiPaper-root > .MuiCardContent-root",
+    "COMMUNITYERROR": "MuiTypography-root MuiTypography-subtitle1 css-1q583w9",
+    "COMMUNITYERRORCREATETRIPLE": "",
+
+    "DESCRIPTION": "#edit-description-text-area",
+    "SAVEDES": ".css-146q31f > :nth-child(2)",
+    "CANCELDES": ".css-146q31f > :nth-child(1)",
+
+    "SUBTOPIC": ".css-x31pf7",
+    "SUBTOPICLIST": ".helper-div > .MuiBox-root",
+    "SAVESUBTOPIC": ".css-1bvoujd > .css-146q31f > :nth-child(2)",
+    "CANCELSUBTOPIC": ".css-1bvoujd > .css-146q31f > :nth-child(1)",
+
+    "APPROVEPOST": "",
+    "MODTOOLS": ".css-kmxogs"
+}

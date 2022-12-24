@@ -1,0 +1,37 @@
+{
+    "CREATEPOSTCOMM": ".MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1bww7ht",
+    "CREATEPOSTBUTTON": ".css-dvxtzn > .MuiButton-contained",
+    "TITLE": ".CreatePost_post-title_textarea__u3m5p",
+    "COMMUNITY": ".CreatePost_choose-community_input__KfgIu",
+    "COMM": ".CreatePost_communities_item__5dzeS",
+    "CHOOSECOMM": ".CreatePost_communities-list__tAUuj > :nth-child(2)",
+    "NFSW": ".CreatePost_create-post__2MnIn > :nth-child(2) > :nth-child(2) > :nth-child(2)",
+    "SPOILER": ".CreatePost_create-post__2MnIn > :nth-child(2) > :nth-child(1) > :nth-child(2)",
+
+    "POSTTAB": "#simple-tab-0",
+    "BODY": ".DraftEditor-editorContainer > .notranslate",
+
+    "IMGVIDEOTAB": "#simple-tab-1 > .CreatePost_icon-tab__CoEgA > :nth-child(2)",
+    "UPLOADIMG": ".css-1abzdwk > label > .MuiButtonBase-root",
+    "UNUPLOADIMG": "",
+
+    "LINKTAB": "#simple-tab-2",
+    "URL": ".CreatePost_post-url__efwmO",
+
+    "POLLTAB": "#simple-tab-3",
+
+    "TALKTAB": "#simple-tab-4",
+
+    "POSTBUTTON": ".MuiTouchRipple-root",
+
+    "POSTSLIST": ".post-section > :nth-child(3) > :nth-child(1)",
+    "UPVOTE": "#test-up-vote",
+    "DOWNVOTE": "#test-down-vote",
+    "VOTECOUNT": "#test-votes-count",
+    "SAVE": "",
+    "MOREOPTIONS": "#test-post-more-interactions",
+    "HIDE": "#test-2-interactions-dropdown",
+    "SHARE": "",
+    "COMMENT": ""
+}
+

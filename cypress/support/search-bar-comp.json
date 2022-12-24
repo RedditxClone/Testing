@@ -1,0 +1,23 @@
+{
+    "SEARCHBAR": ".css-11gpip > .MuiInputBase-root > .MuiInputBase-input",
+    "TABS": ".MuiTabs-flexContainer",
+    "POSTSTAB": "#simple-tab-0",
+    "POSTSLIST": ".css-1bpam96",
+
+    "COMMENTSTAB": "#simple-tab-1",
+    "COMMENTSLIST": ".css-1iu4ijb",
+
+    "COMMUNITIESTAB": "#simple-tab-2",
+    "COMMLIST": ".css-1iu4ijb",
+    "JOINCOMM": ".css-xjyorr",
+
+    "PEOPLETAB": "#simple-tab-3",
+    "PEOPLELIST": ".css-1iu4ijb",
+    "FOLLOW": ".css-xjyorr",
+
+    "NORESULTSPOEPLECOMMU": "h2", 
+    "NORESULTSPOSTCOMMENTS": "h3"
+
+
+}
+

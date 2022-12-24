@@ -15,10 +15,22 @@
   },
   "homepage": "https://github.com/RedditxClone/Testing#readme",
   "dependencies": {
-    "cypress": "^11.0.0",
-    "dotenv": "^16.0.3"
+    "cypress": "^11.2.0",
+    "cypress-file-upload": "^5.0.8",
+    "dotenv": "^16.0.3",
+    "istanbul-lib-coverage": "^3.2.0",
+    "json-parse-even-better-errors": "^3.0.0",
+    "nyc": "^15.1.0"
   },
   "browser": {
-    "[module-name]": false   
+    "[module-name]": false
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "@cypress/instrument-cra": "^1.4.0",
+    "babel-plugin-istanbul": "^6.1.1"
+  },
+  "scripts": {
+    "start-dev": "cypress-scripts -r @cypress/instrument-cra start"
   }
 }
