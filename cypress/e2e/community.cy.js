@@ -64,46 +64,65 @@ describe('Test Community', function () {
 
     it('test create community with empty name', function () {
         community.createCommunity(' ', 'Public', false);
-        cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('A community name is required')
-        //cancel this form
-        cy.get(COMMUNITYCOMP.CLOSECOMMFORM)
-            .should('exist')
-            .click();
+        //cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('A community name is required')
+                
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+            .should('not.be.enabled')
 
     })
 
     it('test create community with repeated name', function () {
         community.createCommunity('doaa', 'Public', false);
         //assertion --> check for the error message that appears
-        cy.get(HOMECOMP.COMMUNITYERROR).contains('Sorry, r/doaa is taken. Try another.')
-        //cancel this form
-        cy.get(HOMECOMP.CLOSECOMMFORM)
-            .should('exist')
-            .click();
-    })
-
-    it('create community with empty name (InValid)', function () {
-
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+        .should('not.be.enabled')
 
     })
 
 
+    it('test create community with name less than 3 char', function () {
+        community.createCommunity('do', 'Public', false);
+        //assertion --> check for the error message that appears
+        //cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('Community names must be between 3–21 characters, and can only contain letters, numbers, or underscores.')
 
-    it('create community with no type (InValid)', function () {
-
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+        .should('not.be.enabled')
 
     })
 
-    it('create community with valid name and type (InValid)', function () {
 
+    it('test create community with name less than 3 char and private type', function () {
+        community.createCommunity('do', 'Private', false);
+        //assertion --> check for the error message that appears
+        //cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('Community names must be between 3–21 characters, and can only contain letters, numbers, or underscores.')
+
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+        .should('not.be.enabled')
 
     })
 
-    it('create community with empty name (InValid)', function () {
+    it('test create community with name less than 3 char and private type', function () {
+        community.createCommunity('do', 'Private', false);
+        //assertion --> check for the error message that appears
+        //cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('Community names must be between 3–21 characters, and can only contain letters, numbers, or underscores.')
 
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+        .should('not.be.enabled')
+
+    })
+
+
+    it('test create community with valid name and public type', function () {
+        community.createCommunity('newcommunityfortest', 'Public', false);
+        //assertion --> check for the error message that appears
+        //cy.get(COMMUNITYCOMP.COMMUNITYERROR).contains('Community names must be between 3–21 characters, and can only contain letters, numbers, or underscores.')
+
+        cy.get(COMMUNITYCOMP.CREATEBUTTON)
+        .should('be.enabled')
+        .click()
 
     })
 
 
    
-   })
+    })

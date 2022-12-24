@@ -33,10 +33,7 @@ class Community {
             cy.get(COMMUNITYCOMP.ADULTCONTENT)
                 .should('exist')
                 .click();
-        
-        cy.get(COMMUNITYCOMP.CREATEBUTTON)
-            .should('exist')
-            .click();
+
     }
 
 
